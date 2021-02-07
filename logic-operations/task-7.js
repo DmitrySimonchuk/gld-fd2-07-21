@@ -14,10 +14,10 @@
 
     console.info('Task-7');
 
-    const userFamily = prompt('Ваша фамилия?', '');
-    const userName = prompt('Ваше имя?', '');
-    const userSecondName = prompt('Ваше отчество?', '');
-    const userAge = prompt('Ваш возраст?', '');
+    const userFamily = prompt('Ваша фамилия?', '') ?? '';
+    const userName = prompt('Ваше имя?', '') ?? '';
+    const userSecondName = prompt('Ваше отчество?', '') ?? '';
+    const userAge = prompt('Ваш возраст?', '') ?? '';
     let userSex = confirm('Ваш пол мужской?');
     let userAgePosition;
 
@@ -51,10 +51,10 @@
 
     console.info('Task-7');
 
-    const userFamily = prompt('Ваша фамилия?', '');
-    const userName = prompt('Ваше имя?', '');
-    const userSecondName = prompt('Ваше отчество?', '');
-    const userAge = prompt('Ваш возраст?', '');
+    const userFamily = prompt('Ваша фамилия?', '') ?? '';
+    const userName = prompt('Ваше имя?', '') ?? '';
+    const userSecondName = prompt('Ваше отчество?', '') ?? '';
+    const userAge = prompt('Ваш возраст?', '') ?? '';
     let userSex = confirm('Ваш пол мужской?');
     let userAgePosition;
 
