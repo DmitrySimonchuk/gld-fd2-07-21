@@ -15,16 +15,15 @@ if (login == 'Вася') {
 
     console.info('Task-6');
 
-    let login = 'Вася';
-    let message;
+    let login = 'Вася';    
     
-    (login === 'Вася') 
-      ? (message = 'Привет') 
-      : (login === 'Директор')   
-        ? (message = 'Здравствуйте') 
-        : (login === '')
-          ? (message = 'Нет логина') 
-          : (message = '');
+    let message = login === 'Вася'
+                    ? 'Привет' 
+                    : login === 'Директор'  
+                      ? 'Здравствуйте' 
+                      : login === ''
+                        ? 'Нет логина' 
+                        : '';
 
     console.log( message );
 

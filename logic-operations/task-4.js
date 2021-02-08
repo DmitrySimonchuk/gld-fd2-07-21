@@ -7,7 +7,7 @@
 
     let month = 11;
 
-    if ( (month < 3) || (month > 11) ) {
+    if ( month < 3 || month > 11 ) {
         console.log( 'winter' );
     } else if ( month < 6 ) {
         console.log( 'spring' );
