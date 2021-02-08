@@ -5,6 +5,28 @@
 // 4444
 // ...
 
+// variant 1
+
+(function() {  
+
+    console.info('Task-3');
+
+    let result;
+
+    for (let i = 1; i <= 9; ++i) {
+        result = '';
+        for (let j = 1; j <=i; ++j) {
+            result += '' + i;            
+        }  
+        console.log( result );          
+    }
+    
+    console.info(' ');
+
+})();
+
+// variant 2
+
 (function() {  
 
     console.info('Task-3');

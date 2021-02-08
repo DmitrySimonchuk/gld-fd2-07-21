@@ -6,6 +6,30 @@
 // xxxxxxxxx
 //    ...   
 
+// variant 1
+
+(function() {  
+
+    console.info('Task-4');
+
+    let result = 'x';
+    let space;
+
+    for (let i = 0; i < 10; ++i) { 
+        space = ' '; 
+        for (let j = (10 - i); j > 0; --j) {
+            space += ' ';
+        }         
+        console.log( space + result );
+        result += 'xx';                
+    }
+    
+    console.info(' ');
+
+})();
+
+// variant 2
+
 (function() {  
 
     console.info('Task-4');
