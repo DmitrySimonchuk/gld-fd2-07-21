@@ -7,4 +7,10 @@ function sendMessage() {
     return console.log( 'message in console' );
 }
 
-console.info(' ');
+// var 2 более гибкий способ (позваоляет использовать более двух обработчиков событий)
+
+click_tag.addEventListener('click', {
+    handleEvent(click_tag) {
+      alert(click_tag.type + " на " + click_tag.currentTarget);
+    }
+  });

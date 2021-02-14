@@ -12,25 +12,26 @@ function Calculator() {
     let memoryHistory = [];
 
     this.read = function() {
-        this.operand1 = 5;          // все остальные функции будут знать об этих данных
-        this.operand2 = 6;
+        this.operand1 = prompt('Enter operand 1','5');          // все остальные функции будут знать об этих данных
+        this.operand2 = prompt('Enter operand 1','6');
         memoryHistory.push('read');
     };
+
     this.sum = function() {
         memoryHistory.push('sum');
         return +this.operand1 + +this.operand2;        
     };
+
     this.multiply = function() {
         memoryHistory.push('multiply');
         return +this.operand1 * +this.operand2;
     };
-    this.history = function history() {          // безымянная фу-ия, чтобы не писать в строку
+
+    this.history = function() {          // безымянная фу-ия, чтобы не писать в строку
         memoryHistory.push(this.history.name);
         memoryHistory.push('history');
         return memoryHistory;
     };
-
-    this.read();
 }
 
 const calk = new Calculator();
@@ -42,6 +43,7 @@ calk.sum();
 calk.read();
 calk.sum();
 calk.multiply();
+console.log( calk.sum() );
 
 console.log( calk.history() );
 

@@ -7,14 +7,8 @@
 
 console.info('Task-4'); 
 
-let comp = function(str1, str2) {
-    str1 += '';
-    str2 += '';
-    if ( str1.localeCompare(str2) === 0 ) {
-        return '1';
-    }
-    return '-1';
-}
+
+// так не работает, так как FDE не определена раньше вызова
 
 let a = 'abc';
 let b = 'abc';
@@ -26,4 +20,35 @@ b = 'abc';
 
 console.log( comp(a, b) );
 
+let comp = function(str1, str2) {
+    str1 += '';
+    str2 += '';
+    return (str1.localeCompare(str2) === 0) ? '1' : '-1';
+}
+
 console.info(' ');
+
+
+// а так работает, так как FDE  определена раньше
+
+(function() {
+
+    let comp = function(str1, str2) {
+        str1 += '';
+        str2 += '';
+        return (str1.localeCompare(str2) === 0) ? '1' : '-1';
+    }
+    
+    let a = 'abc';
+    let b = 'abc';
+    
+    console.log( comp(a, b) );
+    
+    a = 'abC'; 
+    b = 'abc';
+    
+    console.log( comp(a, b) ); 
+    
+    console.info(' ');
+
+})()

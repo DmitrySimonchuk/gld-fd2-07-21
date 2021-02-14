@@ -6,48 +6,44 @@ console.info('Task-1');
 
 // variant 1
 
-(function() {  
+function rangingCodeSymbols(min, max) {
+    
+    let result = 'пара символ - код:';
 
-    function rangeCodeSymbols(min, max) {
-
-        let codeInSymbols;
-        let codeSymbols = 'пара символ - код:';
-
-        for (let i = min; i <= max; ++i) { 
-            codeInSymbols = String.fromCodePoint(i);
-            codeSymbols += `\n ${codeInSymbols} - ${i}`;                               
-        }
-        return codeSymbols;    
+    for (min; min <= max; ++min) { 
+        const symbol = String.fromCodePoint(min);
+        result += `\n ${symbol} - ${min}`;                               
     }
+    return result;    
+}
 
-    const start = 78000;
-    const finish = 78030;
+const startCode = 78000;
+const finishCode = 78030;
 
-    console.log( rangeCodeSymbols(start, finish) );
+console.log( rangingCodeSymbols(startCode, finishCode) );
 
-    console.info(' ');
-
-})();
+console.info(' ');
 
 // variant 2
 
 (function() {  
 
-    function rangeCodeSymbols(min, max) {
-
-        console.log( `пара символ - код: ${String.fromCodePoint(min)} - ${min}` );
-                
-        if ( min > max - 1 ) {
-            return console.log( `это все.` );
+    function rangingCodeSymbols(min, max) {
+        let result = 'Task-1 v2';     
+        function getCodeSymbols(a, b) {
+            result += `\n пара символ - код: ${String.fromCodePoint(a)} - ${a}`;                 
+            if ( a > b - 1 ) {
+                return result += `\n это все.`;
+            }    
+            return getCodeSymbols(a + 1, b);    
         }
-
-        return rangeCodeSymbols(min + 1, max);    
-    }
-
-    const start = 78000;
-    const finish = 78030;
-
-    rangeCodeSymbols(start, finish);
+        return getCodeSymbols(min, max);
+    }    
+    
+    const startCode = 78000;
+    const finishCode = 78030;
+    
+    console.log( rangingCodeSymbols(startCode, finishCode) );     
 
     console.info(' ');
 
