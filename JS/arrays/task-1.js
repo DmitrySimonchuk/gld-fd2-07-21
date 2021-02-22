@@ -3,3 +3,14 @@
 
 console.info('Task-1');
 
+const fruits = ["Яблоко", "Апельсин", "Слива"];
+
+console.log( fruits );
+
+console.log( fruits[fruits.length - 1] );  // last elem not del arr
+
+console.log( fruits );
+
+console.log( fruits.pop() );  // last elem with del arr
+
+console.log( fruits );
