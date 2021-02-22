@@ -12,19 +12,31 @@ function getRandomNumber(min, max) {
 }
 
 let arrNum = (new Array(arrayLength)).fill(0).map( elem => elem = getRandomNumber(minNumber, maxNumber) );
-arrNum = arrNum.concat(arrNum, 'a', 'b', 'c');
+arrNum = arrNum.concat(arrNum, 'a', 'b', 'c', 2, 3, 5);
 
 console.log('Исходный массив [' + arrNum + ']');
 
 function unique(arr) {
+  let resultEndElem = [];
+  let resultStartElem = [];
   let result = [];
 
-  for (let elem of arr) {
-    if (!result.includes(elem)) {
-      result.push(elem);
+  resultEndElem = arr.map((elem, index) => 
+    arr.slice(index + 1).some(value => value === elem)   
+      ? elem = ' * '
+      : elem 
+  );
+  
+  for (let key of arr) {
+    if (!resultStartElem.includes(key)) {
+      resultStartElem.push(key);      
     } else {
-      result.push(' * ');
+      resultStartElem.push(' * ');
     }
+  }
+  
+  for (let i = 0; i < resultEndElem.length; i++) {
+    result[i] = resultEndElem[i] === resultStartElem[i] ? resultEndElem[i] : ' * ';
   }
 
   return result;
