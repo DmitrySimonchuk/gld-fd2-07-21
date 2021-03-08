@@ -42,11 +42,15 @@ class VirtualFish {
   }
 
   reproduce() {
-    let name = `Baby of ${this.name}`;
-    let size = 'fry';
+    const name = `Baby of ${this.name}`;
+    const size = 'fry';
     const babyFish = new VirtualFish(name, this.color, size, this.position);
     return babyFish;
-  }  
+  } 
+  
+  toString() {
+    return this.name;
+  }
 }
 
 const firstFish = new VirtualFish('Carp', 'grey', 'Big', {x: 50, y: 40, z: 40});
@@ -55,7 +59,7 @@ const secondFish = new VirtualFish('Catfish', 'white', 'Large', {x: 20, y: 60, z
 
 secondFish.food = 'carrion';
 
-console.info('first Fish');
+console.log( 'It is ' + firstFish );
 console.table( firstFish );
 
 console.info('');
@@ -64,13 +68,13 @@ console.log( firstFish.eat('worms') );
 console.log( firstFish.eat('rabbit') );
 
 console.info('');
-console.info('first Fish');
+console.log( 'It is ' + firstFish + ' after moving');
 console.table( firstFish );
 
 console.info('');
-console.info('firstFish reproduce');
+console.log( 'It is ' + firstFish.reproduce() );
 console.table( firstFish.reproduce() );
 
 console.info('');
-console.info('second Fish');
+console.log( 'It is ' + secondFish );
 console.table( secondFish ); 
