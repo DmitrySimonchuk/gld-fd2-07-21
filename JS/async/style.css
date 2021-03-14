@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+}
+
+.button {
+    border: solid 2px black;
+    background-color: rgb(205, 205, 238);
+    padding: 10px;
+    
+}
+
+button:nth-of-type(1) {
+    background-color: rgb(168, 243, 106);
+}
+
+.button-for-task-6 {
+    border: solid 2px rgb(124, 40, 40);
+    background-color: rgb(205, 207, 170);
+    padding: 20px;
+}
