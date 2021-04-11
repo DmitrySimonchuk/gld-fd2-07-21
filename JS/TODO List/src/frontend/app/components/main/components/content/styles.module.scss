@@ -1,0 +1,9 @@
+$gap: 5rem;  
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: $gap;
+    padding-left: $gap;
+    padding-right: $gap;
+}

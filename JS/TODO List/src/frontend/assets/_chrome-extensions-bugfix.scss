@@ -1,0 +1,13 @@
+ *:not(body):not(html) {
+    border: 1px dashed grey;
+    margin: 1px;
+    padding: 1px;
+}
+/*
+html>div {
+    display: none;
+}
+
+app-content {
+    display: none;
+} */
