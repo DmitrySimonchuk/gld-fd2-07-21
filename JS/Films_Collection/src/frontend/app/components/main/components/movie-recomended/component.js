@@ -37,6 +37,9 @@ export function MovieRecomendation({
     const cardTitle = document.createElement('h5');
     const genreEl = document.createElement('h5');
     const cardText = document.createElement('p');
+
+    card.setAttribute('data-id', id);
+
     const cardButton = Button({
         classList: `btn btn-primary ${styles.btnOpenMovie}`,
         content: 'Open'
@@ -115,11 +118,11 @@ function openMovie(e) {
 function openMovieButton(id) {
     const btn = Button({
         classlist: `btn btn-primary ${styles.btnOpenMovie}`,
-        content: 'Open'
+        content: 'Open',
+        clickHandler: openMovie
     });
 
     btn.setAttribute('data-id', id);
-    btn.addEventListener('click', openMovie)
-
+    
     return btn;
 }

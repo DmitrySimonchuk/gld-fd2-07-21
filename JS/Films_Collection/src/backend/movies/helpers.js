@@ -6,19 +6,14 @@ function getMovies(req, res) {
         q,
         page
     } = req.query;
-
+/*
     if (q) {
         return res.json(db.movies.filter(movie => {
             return movie.title.toLowerCase().includes(q.toLowerCase());
         }));
     }
-
-    if (sort === 'desc') {
-        const movies = [...db.movies].sort((a, b) => b.id - a.id);
-        return res.json(movies);
-    }
-
-    return res.json(db.movies.slice(25 * (page - 1), 25 * page));
+*/
+    return res.json(db.movies.sort((m1, m2) => m2.id - m1.id).slice(0, 100));
 };
 
 function getMovieById(req, res) {
@@ -46,8 +41,10 @@ function deleteMovieById(req, res) {
 
 function createMovie(req, res) {
     const movie = {
-        id: Date.now()
+        ...req.body,               // title: req.body.title  - for security data on users error 
+        id: `${Date.now()}`
     };
+    console.log(req.body);
     db.movies.push(movie);
     res.status(201).json(movie);
 };

@@ -1,12 +1,18 @@
 export function Button({
     classlist = 'btn btn-primary',
-    content = ''
+    content = '',
+    clickHandler,
+    type = 'button'
 }) {
     const btn = document.createElement('button');
 
-    btn.setAttribute('type', 'button');
+    btn.setAttribute('type', type);
     btn.classList.add(...classlist.split(' '));
     btn.textContent = content;
+
+    if (clickHandler) {
+        btn.addEventListener('click', clickHandler);
+    }
 
     return btn;
 }
