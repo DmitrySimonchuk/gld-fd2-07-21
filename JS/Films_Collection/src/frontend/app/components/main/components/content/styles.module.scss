@@ -1,0 +1,17 @@
+$gap: 2rem;                       // variable
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: $gap;
+    padding-left: $gap;
+    padding-right: $gap;
+}
+
+.heading {
+    color: red;
+}
+
+.poster {
+    width: 500px;
+}

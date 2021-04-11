@@ -1,0 +1,11 @@
+.stars {
+    display: flex;
+
+    i.fa-star.active {
+        color: yellow;
+    }
+
+    i.fa-star.inactive {
+        color: lightgrey;
+    }
+}

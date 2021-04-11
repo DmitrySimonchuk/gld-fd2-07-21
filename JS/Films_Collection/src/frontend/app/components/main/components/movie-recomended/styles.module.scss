@@ -1,0 +1,29 @@
+.movie-recommendation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;  
+}
+
+.description {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-open-movie {
+    align-self: stretch;
+}
+
+.label {
+    color: lightgray;
+}
+
+.title {
+    color: white;
+}
+
+.card-no-border {
+    border: none
+}

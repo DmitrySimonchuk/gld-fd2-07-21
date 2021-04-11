@@ -1,0 +1,1 @@
+export { MovieRecomendation } from './component';
