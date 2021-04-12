@@ -50,6 +50,7 @@
     "sass": "1.32.8",
     "webpack-bundle-analyzer": "4.4.0",
     "concurrently": "6.0.0",
-    "webpack-node-externals": "2.5.2"
+    "webpack-node-externals": "2.5.2",
+    "jquery-confirm": "3.3.4"
   }
 }

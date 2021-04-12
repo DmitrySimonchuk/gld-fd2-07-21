@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { ProvidePlugin } = require('webpack');
 
 const frontConfig = {
     // Stuff the entire webpack-front.config.js
@@ -18,7 +19,10 @@ const frontConfig = {
             template: path.resolve(__dirname, 'src/frontend/index.html')
         }),
         new MiniCssExtractPlugin(),
-        // new BundleAnalyzerPlugin()    - for analize
+        // new BundleAnalyzerPlugin(),    - for analize
+        new ProvidePlugin({
+            $: 'node_modules/jquery-confirm/dist/jquery-confirm.min.js'
+        })
     ],
     module: {
         rules: [

@@ -19,7 +19,10 @@ const frontConfig = {
             template: path.resolve(__dirname, 'src/frontend/index.html')
         }),
         new MiniCssExtractPlugin(),
-        // new BundleAnalyzerPlugin()    - for analize
+        // new BundleAnalyzerPlugin(),    - for analize
+        new ProvidePlugin({
+            $: 'node_modules/jquery-confirm/dist/jquery-confirm.min.js'
+        })
     ],
     module: {
         rules: [

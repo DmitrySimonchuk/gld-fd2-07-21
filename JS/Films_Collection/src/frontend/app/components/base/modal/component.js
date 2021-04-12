@@ -5,7 +5,6 @@ import {
     closeModal
 } from './helpers';
 
-
 import styles from './styles.module.scss';
 
 export function Modal({

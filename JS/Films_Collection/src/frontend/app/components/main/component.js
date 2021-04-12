@@ -5,7 +5,7 @@ import { FormAddMovie } from './components/form-add-movie';
 export function Main() {
     const main = document.createElement('main');
 
-    main.append(FormAddMovie(), Aside(), Content());
+    main.append(Aside(), Content());
 
     return main;
 }

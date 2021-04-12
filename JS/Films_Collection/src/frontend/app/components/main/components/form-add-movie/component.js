@@ -12,16 +12,17 @@ export function FormAddMovie() {
     const descriptionTextarea = document.createElement('textarea');
     const formSubmitButton = Button({
         content: 'Add movie',
-        clickHandler: addMovie,
         type: 'submit'
     });
+
+    form.addEventListener('submit', addMovie);
 
     form.classList.add(formAddMovieClassName);
     titleInput.classList.add('form-control', 'mb-3');
     descriptionTextarea.classList.add('form-control', 'mb-3');
 
-    titleInput.value = '50 pipipez';
-    descriptionTextarea.value = '50 pipipez Reliez';
+    titleInput.value = 'film title';
+    descriptionTextarea.value = 'film body';
 
     form.append(
         titleInput,

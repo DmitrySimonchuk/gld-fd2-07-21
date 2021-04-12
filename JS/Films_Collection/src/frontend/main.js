@@ -8,10 +8,12 @@ import {
     Modal
 } from './app/components/base/modal';
 
+import '../../node_modules/jquery-confirm/dist/jquery-confirm.min.js';
+
 import './styles.scss';
 
 document.querySelector('#root').append(
-    App(),
+    App()/*,
     Modal({
         title: 'Modal-title',
         body: 'Modal body text goes here.',
@@ -25,5 +27,5 @@ document.querySelector('#root').append(
                 content: 'Discard changes'
             }),
         ]
-    })
+    })*/
 );

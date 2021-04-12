@@ -8,7 +8,7 @@ export function Button({
 
     btn.setAttribute('type', type);
     btn.classList.add(...classlist.split(' '));
-    btn.textContent = content;
+    btn.innerHTML = content;
 
     if (clickHandler) {
         btn.addEventListener('click', clickHandler);
