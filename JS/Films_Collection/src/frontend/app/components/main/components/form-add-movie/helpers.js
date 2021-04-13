@@ -3,15 +3,16 @@ import {
 } from "./constans";
 import {
     MovieRecomendation
-} from "./../movie-recomended";
+} from "../movie-recomended";
 import { Spinner, startLoadingSpinner, stopLoadingSpinner } from "../../../base/spinner";
+import { fetchWithLoader } from "../../../base/helpers";
 
 export function addMovie(e) {
     e.preventDefault();
 
     const form = document.querySelector(formAddMovieSelector);
-    const titleInput = document.querySelector('input');
-    const descriptionTextarea = document.querySelector('textarea');
+    const titleInput = document.querySelector('form input');
+    const descriptionTextarea = document.querySelector('form textarea');
     const title = titleInput.value;
     const description = descriptionTextarea.value;
 
@@ -20,7 +21,7 @@ export function addMovie(e) {
     
     console.log(title, description);
 
-    fetch('http://localhost:3000/movies', {
+    fetchWithLoader('http://localhost:3000/movies', {
             method: 'POST',
             body: JSON.stringify({
                 title,

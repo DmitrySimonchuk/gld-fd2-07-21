@@ -6,13 +6,13 @@ function getMovies(req, res) {
         q,
         page
     } = req.query;
-/*
+
     if (q) {
         return res.json(db.movies.filter(movie => {
             return movie.title.toLowerCase().includes(q.toLowerCase());
         }));
     }
-*/
+
     return res.json(db.movies.sort((m1, m2) => m2.id - m1.id).slice(0, 100));
 };
 

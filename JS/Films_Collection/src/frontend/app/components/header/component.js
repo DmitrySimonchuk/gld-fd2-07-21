@@ -2,7 +2,7 @@ import {
     Button
 } from '../base/button';
 import { Modal } from '../base/modal';
-import { FormAddMovie } from '../main/components/form-add-movie/component';
+import { FormAddMovie } from '../main/components/form-add-movie';
 import { formAddMovieClassName } from '../main/components/form-add-movie/constans';
 import {
     HeaderNav

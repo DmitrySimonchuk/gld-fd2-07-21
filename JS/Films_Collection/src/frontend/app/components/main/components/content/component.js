@@ -1,4 +1,5 @@
 import {
+    fetchWithLoader,
     randomIntFromInterval
 } from '../../../base/helpers';
 import {
@@ -19,7 +20,7 @@ export function Content() { // section
 
     const fr = document.createDocumentFragment();
 
-    fetch('http://localhost:3000/movies?page=1').then(res => res.json()).then(movies => {
+    fetchWithLoader('http://localhost:3000/movies?page=1').then(res => res.json()).then(movies => {
         movies.forEach((movie) => {
             fr.append(MovieRecomendation({
                 id: movie.id,

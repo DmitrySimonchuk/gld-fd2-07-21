@@ -1,5 +1,6 @@
 import {
     debounce,
+    fetchWithLoader,
     randomIntFromInterval,
     throttle
 } from '../../../base/helpers';
@@ -25,7 +26,7 @@ function search(e) {
     const q = e.target.value;
 
     if (q.length > 2) {
-        fetch(`http://localhost:3000/movies?q=${q}`)
+        fetchWithLoader(`http://localhost:3000/movies?q=${q}`)
             .then(res => res.json())
             .then(movies => {
                 console.log(movies);

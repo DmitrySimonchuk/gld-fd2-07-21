@@ -20,9 +20,9 @@ const frontConfig = {
         }),
         new MiniCssExtractPlugin(),
         // new BundleAnalyzerPlugin(),    - for analize
-        new ProvidePlugin({
+        /*new ProvidePlugin({
             $: 'node_modules/jquery-confirm/dist/jquery-confirm.min.js'
-        })
+        })*/
     ],
     module: {
         rules: [

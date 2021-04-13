@@ -1,6 +1,7 @@
 import {
     Button
 } from '../../../base/button';
+import { fetchWithLoader } from '../../../base/helpers';
 import {
     Modal
 } from '../../../base/modal';
@@ -80,7 +81,7 @@ function openMovie(e) {
     const inject = document.body.append;
     console.log(e.target.dataset.id);
 
-    fetch(`http://localhost:3000/movies/${movieId}`)
+    fetchWithLoader(`http://localhost:3000/movies/${movieId}`)
         .then(res => {
             if (res.status === 404) {
                 res.text().then(errorMessage => {
