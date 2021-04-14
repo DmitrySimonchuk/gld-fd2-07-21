@@ -1,7 +1,6 @@
 import {
     Button
 } from '../../../base/button';
-import { fetchWithLoader } from '../../../base/helpers';
 import {
     Modal
 } from '../../../base/modal';
@@ -11,8 +10,12 @@ import {
 import {
     Movie
 } from '../movie/component';
+import {
+    MoviesService
+} from '../../../../services/movies.service'
 
 import styles from './styles.module.scss';
+import { FormEditMovie } from '../form-edit-movie/component';
 
 export function MovieRecomendation({
     id,
@@ -24,14 +27,15 @@ export function MovieRecomendation({
     poster
 }, {
     hasOpenButton = true,
+    hasEditButton = true,
     posterOptions = {
         width: '100%',
         height: '200px'
-    }, 
+    },
     cardOptions = {
         hasBorder: true
     }
-} = {} ) {
+} = {}) {
     const card = document.createElement('div');
     const imgEl = document.createElement('img');
     const cardBody = document.createElement('div');
@@ -66,9 +70,13 @@ export function MovieRecomendation({
     cardText.textContent = overview;
 
     cardBody.append(Stars(stars), cardTitle, cardText);
-    
+
     if (hasOpenButton) {
         cardBody.append(openMovieButton(id))
+    }
+
+    if (hasEditButton) {
+        cardBody.append(editMovieButton(id))
     }
 
     card.append(imgEl, cardBody);
@@ -78,21 +86,11 @@ export function MovieRecomendation({
 
 function openMovie(e) {
     const movieId = e.target.dataset.id;
-    const inject = document.body.append;
-    console.log(e.target.dataset.id);
+    //const inject = document.body.append;
+    //console.log(e.target.dataset.id);
+    const moviesService = new MoviesService();
 
-    fetchWithLoader(`http://localhost:3000/movies/${movieId}`)
-        .then(res => {
-            if (res.status === 404) {
-                res.text().then(errorMessage => {
-                    document.body.append(Modal({
-                        title: errorMessage
-                    }));
-                });
-            } else {
-                return res.json();
-            }
-        })
+    moviesService.getMovieById(movieId)
         .then(movie => {
             if (movie) {
                 document.body.append(Modal({
@@ -116,6 +114,21 @@ function openMovie(e) {
         .catch(console.error);
 }
 
+function editMovie(e) {
+    const movieId = e.target.dataset.id;
+
+    const moviesService = new MoviesService();
+
+    moviesService.getMovieById(movieId)
+        .then(movie => {
+            document.body.append(Modal({
+                title: `Edit "${movie.title}"`,
+                body: FormEditMovie()
+            }))
+            console.log(movie)
+        });
+}
+
 function openMovieButton(id) {
     const btn = Button({
         classlist: `btn btn-primary ${styles.btnOpenMovie}`,
@@ -124,6 +137,18 @@ function openMovieButton(id) {
     });
 
     btn.setAttribute('data-id', id);
-    
+
+    return btn;
+}
+
+function editMovieButton(id) {
+    const btn = Button({
+        classlist: `btn btn-secondary`,
+        content: 'Edit',
+        clickHandler: editMovie
+    });
+
+    btn.setAttribute('data-id', id);
+
     return btn;
 }

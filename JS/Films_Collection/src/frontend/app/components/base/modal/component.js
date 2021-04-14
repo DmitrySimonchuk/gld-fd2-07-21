@@ -11,7 +11,7 @@ export function Modal({
     title,
     body,
     hasFooterCloseButton,
-    footerButtons
+    footerButtons = []
 }) {
     document.querySelector('.modal')?.remove();
 

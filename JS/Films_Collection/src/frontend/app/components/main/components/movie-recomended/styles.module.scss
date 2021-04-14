@@ -3,6 +3,18 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;  
+    h5,
+    .label {
+        color: rgb(24, 21, 185);
+    }
+
+    h4 {
+        color: rgb(231, 43, 43);
+    }
+
+    img {
+        width: 100px;        
+    }    
 }
 
 .description {
@@ -10,6 +22,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    p {
+        height: 150px;
+        overflow-y: auto;
+    }
 }
 
 .btn-open-movie {

@@ -1,5 +1,7 @@
 import {
-    fetchWithLoader,
+    MoviesService
+} from '../../../../services/movies.service';
+import {    
     randomIntFromInterval
 } from '../../../base/helpers';
 import {
@@ -19,8 +21,9 @@ export function Content() { // section
     content.append(span);
 
     const fr = document.createDocumentFragment();
+    const moviesService = new MoviesService();
 
-    fetchWithLoader('http://localhost:3000/movies?page=1').then(res => res.json()).then(movies => {
+    moviesService.getMovies().then(movies => {
         movies.forEach((movie) => {
             fr.append(MovieRecomendation({
                 id: movie.id,

@@ -1,6 +1,8 @@
 import {
+    MoviesService
+} from '../../../../services/movies.service';
+import {
     debounce,
-    fetchWithLoader,
     randomIntFromInterval,
     throttle
 } from '../../../base/helpers';
@@ -24,10 +26,11 @@ export function SearchBarInput() {
 
 function search(e) {
     const q = e.target.value;
+    const moviesService = new MoviesService();
+
 
     if (q.length > 2) {
-        fetchWithLoader(`http://localhost:3000/movies?q=${q}`)
-            .then(res => res.json())
+        moviesService.getMovies(q)
             .then(movies => {
                 console.log(movies);
                 const content = document.querySelector(`.${contentStyles.content}`);
