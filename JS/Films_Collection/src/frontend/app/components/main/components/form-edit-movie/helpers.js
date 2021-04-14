@@ -1,42 +1,46 @@
 import {
-    formAddMovieSelector
-} from "./constans";
-import {
-    MovieRecomendation
-} from "../movie-recomended";
-import { MoviesService } from "../../../../services/movies.service";
+    MoviesService
+} from "../../../../services/movies.service";
+import { closeModal } from "../../../base/modal/helpers";
 
-export function addMovie(e) {
-    e.preventDefault();
+export function saveMovie(e) {
+    e.preventDefault()
 
-    const form = document.querySelector(formAddMovieSelector);
-    const titleInput = document.querySelector('form input');
-    const descriptionTextarea = document.querySelector('form textarea');
-    const title = titleInput.value;
-    const overview = descriptionTextarea.value;
+    const form = e.target.closest('form');
+
+    const {
+        title: titleEl,
+        overview: overviewEl
+    } = form.elements;
+
+    const movieId = form.dataset.id;
+    const title = titleEl.value;
+    const overview = overviewEl.value;
+
     const moviesService = new MoviesService();
-
-    document.querySelector('modal')?.remove();
-        
-    console.log(title, overview);
-
-    moviesService.postMovie({
+    
+    moviesService.putMovie(movieId, {        
         title,
         overview
-    })
-        .then(data => {
-            const movieRecomendation = MovieRecomendation({
-                id: data.id,
-                title,
-                overview
-            });
-            document.querySelector('[class^="content"]').prepend(movieRecomendation);
-            document.querySelector('modal')?.remove();
+    }).then(movie => {
+        console.log(movie);
 
-            $.alert({
-                title: 'Alert!',
-                content: 'Simple alert!'
-            });            
-        })
-        .catch(err => { console.log(err) })
+        const card = document.querySelector(`.card[data-id="${movieId}"]`);
+
+        console.log(card);
+
+        const cardTitleEl = card.querySelector('card-title');
+        const cardTextEl = card.querySelector('card-text');
+
+        cardTitleEl.textContent = movie.title;
+        cardTextEl.textContent = movie.overview;
+
+        closeModal(e);
+
+        $.alert({
+            type: 'green',
+            title: 'Success!',
+            content: 'Movie successfully saved!'
+        });
+    });
 }

@@ -57,11 +57,14 @@ function ModalContent({
     const modalContent = document.createElement('div');
 
     modalContent.classList.add('modal-content');
-    modalContent.append(ModalHeader(title), ModalBody(body), ModalFooter({
-        hasFooterCloseButton,
-        footerButtons
-    }));
-
+    modalContent.append(ModalHeader(title), ModalBody(body));
+    if (footerButtons.length) {
+        modalContent.append(ModalFooter({
+            hasFooterCloseButton,
+            footerButtons
+        }));
+    } 
+    
     return modalContent;
 }
 

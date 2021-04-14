@@ -1,8 +1,7 @@
 const db = require('../db.json');
 
 function getMovies(req, res) {
-    const {
-        sort,
+    const {        
         q,
         page
     } = req.query;
@@ -41,7 +40,7 @@ function deleteMovieById(req, res) {
 
 function createMovie(req, res) {
     const movie = {
-        ...req.body,               // title: req.body.title  - for security data on users error 
+        ...req.body, // title: req.body.title  - for security data on users error 
         id: `${Date.now()}`
     };
     console.log(req.body);
@@ -57,7 +56,8 @@ function updateMovie(req, res) {
     const {
         id
     } = req.params;
-    const targetMovieIndex = db.movies.findIndex(movie => movie.id === +id);
+    
+    const targetMovieIndex = db.movies.findIndex(movie => movie.id === id);
 
     db.movies[targetMovieIndex] = {
         ...db.movies[targetMovieIndex],

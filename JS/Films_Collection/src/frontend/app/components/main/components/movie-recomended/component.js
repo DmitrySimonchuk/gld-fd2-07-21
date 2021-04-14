@@ -121,11 +121,19 @@ function editMovie(e) {
 
     moviesService.getMovieById(movieId)
         .then(movie => {
+            const form = FormEditMovie();
+            form.setAttribute('data-id', movieId);
+
             document.body.append(Modal({
                 title: `Edit "${movie.title}"`,
-                body: FormEditMovie()
-            }))
-            console.log(movie)
+                body: form
+            }));
+
+            const titleEl = form.elements.title;
+            const overviewEl = form.elements.overview;
+
+            titleEl.value = movie.title;
+            overviewEl.value = movie.overview;
         });
 }
 

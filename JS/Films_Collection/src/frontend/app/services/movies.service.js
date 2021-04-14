@@ -38,11 +38,33 @@ export class MoviesService {
     postMovie(movie) {
         const m = {
             title: movie.title,
-            overview: movie.overview
+            overview: movie.overview,
+            genres: movie.genres,
+            poster: movie.poster,
+            release_date: movie.releaseDate
         }
 
         return fetchWithLoader(byPath(`/movies`, {
                 method: 'POST',
+                body: JSON.stringify(m),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }))
+            .then(asJSON)
+    }
+
+    putMovie(movieId, movieChanges) {
+        const m = {
+            title: movieChanges.title,
+            overview: movieChanges.overview,
+            genres: movieChanges.genres,
+            poster: movieChanges.poster,
+            release_date: movieChanges.releaseDate
+        }
+
+        return fetchWithLoader(byPath(`/movies/${movieId}`, {
+                method: 'PUT',
                 body: JSON.stringify(m),
                 headers: {
                     'Content-Type': 'application/json'

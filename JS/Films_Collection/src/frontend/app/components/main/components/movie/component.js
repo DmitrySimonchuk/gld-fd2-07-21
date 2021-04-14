@@ -7,6 +7,7 @@ export function Movie(movie) {
 
     movieSection.append(MovieRecomendation(movie, {
         hasOpenButton: false,
+        hasEditButton: false,
         posterOptions: {
             width: '200px',
             height: '300px'

@@ -1,1 +1,1 @@
-export { FormAddMovie } from './component';
+export { FormEditMovie } from './component';
