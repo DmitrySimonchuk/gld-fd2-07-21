@@ -13,7 +13,7 @@ function asJSON(res) {
 }
 
 export class MoviesService {
-    
+
     getMovieById(movieId) {
         return fetchWithLoader(byPath(`/movies/${movieId}`))
             .then(res => {
@@ -69,6 +69,13 @@ export class MoviesService {
                 headers: {
                     'Content-Type': 'application/json'
                 }
+            }))
+            .then(asJSON)
+    }
+
+    deleteMovie(movieId) {
+        return fetchWithLoader(byPath(`/movies/${movieId}`, {
+                method: 'DELETE',
             }))
             .then(asJSON)
     }

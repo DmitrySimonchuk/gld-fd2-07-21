@@ -72,12 +72,14 @@ export function MovieRecomendation({
     cardBody.append(Stars(stars), cardTitle, cardText);
 
     if (hasOpenButton) {
-        cardBody.append(openMovieButton(id))
+        cardBody.append(OpenMovieButton(id))
     }
 
     if (hasEditButton) {
-        cardBody.append(editMovieButton(id))
+        cardBody.append(EditMovieButton(id))
     }
+
+    cardBody.append(DeleteMovieButton(id));
 
     card.append(imgEl, cardBody);
 
@@ -137,7 +139,7 @@ function editMovie(e) {
         });
 }
 
-function openMovieButton(id) {
+function OpenMovieButton(id) {
     const btn = Button({
         classlist: `btn btn-primary ${styles.btnOpenMovie}`,
         content: 'Open',
@@ -149,11 +151,57 @@ function openMovieButton(id) {
     return btn;
 }
 
-function editMovieButton(id) {
+function EditMovieButton(id) {
     const btn = Button({
         classlist: `btn btn-secondary`,
         content: 'Edit',
         clickHandler: editMovie
+    });
+
+    btn.setAttribute('data-id', id);
+
+    return btn;
+}
+
+function deleteMovie(e) {
+    const movieId = e.target.dataset.id;
+
+    console.log('Delete ' + movieId +'?');
+
+    $.confirm({
+        title: 'Warning!',
+        content: `Confirm you want to delete movie with <p><strong> #id ${movieId}!</p></strong>`,
+        type: 'orange',
+        buttons: {
+            yes: {
+                btnClass: 'btn-warning',
+                action: function() {
+                    console.log(movieId + ' movieId');
+                    const moviesService = new MoviesService();
+
+                    moviesService.deleteMovie(movieId)
+                        .then(console.log)
+                        .then(deleteMovieId => {
+                            document.querySelector(`.card[data-id="${deleteMovieId}"]`)?.remove();
+                            
+                            $.escapeSelector({
+                                type: 'green',
+                                title: 'Success!',
+                                content: `Movie successfully deleted!`
+                            })
+                        });
+                }
+            },
+            no: { }
+        }
+    });
+}
+
+function DeleteMovieButton(id) {
+    const btn = Button({
+        classlist: `btn btn-danger`,
+        content: 'Delete',
+        clickHandler: deleteMovie
     });
 
     btn.setAttribute('data-id', id);
