@@ -34,7 +34,7 @@ function deleteMovieById(req, res) {
     const {
         id
     } = req.params;
-    db.movies = db.movies.filter(movie => movie.id !== +id);
+    db.movies = db.movies.filter(movie => movie.id !== id);
     res.json(id);
 };
 

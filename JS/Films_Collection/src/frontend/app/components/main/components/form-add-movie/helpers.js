@@ -5,6 +5,7 @@ import {
     MovieRecomendation
 } from "../movie-recomended";
 import { MoviesService } from "../../../../services/movies.service";
+import { closeModal } from "../../../base/modal/helpers";
 
 export function addMovie(e) {
     e.preventDefault();
@@ -32,6 +33,8 @@ export function addMovie(e) {
             });
             document.querySelector('[class^="content"]').prepend(movieRecomendation);
             document.querySelector('modal')?.remove();
+
+            closeModal(e);
 
             $.alert({
                 title: 'Alert!',

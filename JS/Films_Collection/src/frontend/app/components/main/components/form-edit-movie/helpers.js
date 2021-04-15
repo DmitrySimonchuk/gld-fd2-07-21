@@ -29,11 +29,13 @@ export function saveMovie(e) {
 
         console.log(card);
 
-        const cardTitleEl = card.querySelector('card-title');
-        const cardTextEl = card.querySelector('card-text');
+        const cardTitleEl = card.querySelector('.card-title');
+        const cardTextEl = card.querySelector('.card-text');
 
         cardTitleEl.textContent = movie.title;
         cardTextEl.textContent = movie.overview;
+
+        console.log(cardTitleEl.textContent);
 
         closeModal(e);
 
