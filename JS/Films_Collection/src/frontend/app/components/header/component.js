@@ -13,6 +13,7 @@ import {
 import {
     SearchBar
 } from './components/search-bar';
+import { ThemeSwitcher } from './components/theme-switcher/component';
 import {
     UserControlPanel
 } from './components/user-control-panel';
@@ -25,7 +26,7 @@ export function Header() {
     header.append(Button({
             content: '<i class="fa fa-plus"></i>',
             clickHandler: openModalToAddMovie
-        }), HeaderNav(), Logo(), SearchBar(), UserControlPanel());
+        }), HeaderNav(), Logo(), SearchBar(), UserControlPanel(), ThemeSwitcher());
 
     header.classList.add('header', 'm-4');
 
