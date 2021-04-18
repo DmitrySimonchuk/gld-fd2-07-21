@@ -179,8 +179,7 @@ function deleteMovie(e) {
                     console.log(movieId + ' movieId');
                     const moviesService = new MoviesService();
 
-                    moviesService.deleteMovie(movieId)
-                        .then(console.log)
+                    moviesService.deleteMovie(movieId)                        
                         .then(deleteMovieId => {
                             document.querySelector(`.card[data-id="${deleteMovieId}"]`)?.remove();
                             
@@ -188,7 +187,7 @@ function deleteMovie(e) {
                                 type: 'green',
                                 title: 'Success!',
                                 content: `Movie successfully deleted!`
-                            })
+                            })                            
                         });
                 }
             },

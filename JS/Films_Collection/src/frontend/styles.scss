@@ -4,8 +4,12 @@
 @import '../../node_modules/jquery-confirm/dist/jquery-confirm.min.css';
 @import './assets/chrome-extensions-bugfix';
 
-body {
+body.theme-dark {
   background: black;
+}
+
+body.theme-light {
+  background: rgb(185, 185, 185);
 }
 
 h1, h2, h3, h4, h5, h6 {

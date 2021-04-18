@@ -44,13 +44,13 @@ export class MoviesService {
             release_date: movie.releaseDate
         }
 
-        return fetchWithLoader(byPath(`/movies`, {
+        return fetchWithLoader(byPath(`/movies`), {
                 method: 'POST',
                 body: JSON.stringify(m),
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }))
+            })
             .then(asJSON)
     }
 
@@ -62,21 +62,21 @@ export class MoviesService {
             poster: movieChanges.poster,
             release_date: movieChanges.releaseDate
         }
-
-        return fetchWithLoader(byPath(`/movies/${movieId}`, {
+        console.log('putmovie', m);
+        return fetchWithLoader(byPath(`/movies/${movieId}`), {
                 method: 'PUT',
                 body: JSON.stringify(m),
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }))
+            })
             .then(asJSON)
     }
 
     deleteMovie(movieId) {
-        return fetchWithLoader(byPath(`/movies/${movieId}`, {
+        return fetchWithLoader(byPath(`/movies/${movieId}`), {
                 method: 'DELETE',
-            }))
+            })
             .then(asJSON)
     }
 }
