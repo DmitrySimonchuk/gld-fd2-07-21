@@ -1,17 +1,20 @@
-import { CreatingTasksList } from '../creating-task-list/component';
+import { TasksService } from '../../../../services/tasks.services';
+import { CreatingTasksList } from '../creating-tasks-list/component';
 import styles from './styles.module.scss';
 
 export function Content() { // section
     const content = document.createElement('section');
-    const spinner = document.createElement('img');
+    const drunkSpinner = document.createElement('img');
     const fr = document.createDocumentFragment();
+    const tasksService = new TasksService();
 
-    spinner.setAttribute('src', 'src/frontend/images/109(2).png');
+    drunkSpinner.setAttribute('src', 'src/frontend/images/109(2).png');
+    drunkSpinner.classList.add(styles.drunkSpinner);
     content.classList.add(styles.content);
 
-    content.append(spinner);
+    content.append(drunkSpinner);
 
-    fetch('http://localhost:3000/tasks?page=1').then(res => res.json()).then(tasks => {
+    tasksService.getTasks().then(tasks => {
         tasks.forEach((task) => {
             fr.append(CreatingTasksList({
                 id: task.id,
@@ -24,7 +27,7 @@ export function Content() { // section
             }))
         });
 
-        spinner.remove();
+        drunkSpinner.remove();
         content.append(fr);
     });
     

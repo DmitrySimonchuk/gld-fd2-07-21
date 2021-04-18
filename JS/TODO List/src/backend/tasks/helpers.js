@@ -18,14 +18,14 @@ function getTasks(req, res) {
         return res.json(tasks);
     }
 
-    return res.json(db.tasks.slice(10 * (page - 1), 10 * page));
+    return res.json(db.tasks);
 };
 
 function getTaskById(req, res) {
     const {
         id
     } = req.params;
-    const desireTask = db.tasks.find((task) => task.id === id);
+    const desireTask = db.tasks.find((task) => task.id === +id);
 
     if (desireTask) {
         res.json(desireTask);
@@ -46,6 +46,7 @@ function deleteTaskById(req, res) {
 
 function createTask(req, res) {
     const task = {
+        ...req.body,
         id: Date.now(),
         date_creating: Date.now()
     };

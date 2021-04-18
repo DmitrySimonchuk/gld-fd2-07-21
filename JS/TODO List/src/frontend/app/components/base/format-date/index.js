@@ -1,0 +1,1 @@
+export { createDateInNewFormat_DD_MM_YYYY_HH_MM } from './component';

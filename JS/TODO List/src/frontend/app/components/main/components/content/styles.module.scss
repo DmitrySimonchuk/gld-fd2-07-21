@@ -1,4 +1,5 @@
 $gap: 5rem;  
+$above-bootstrap-modal: 1061;
 
 .content {
     display: grid;
@@ -6,4 +7,11 @@ $gap: 5rem;
     grid-gap: $gap;
     padding-left: $gap;
     padding-right: $gap;
+}
+
+.drunkSpinner {
+    position: fixed;    
+    z-index: $above-bootstrap-modal;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
 }

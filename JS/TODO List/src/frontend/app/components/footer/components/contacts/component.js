@@ -7,7 +7,7 @@ import {
 } from './myContacts';
 import {    
     IconTypes
-} from "../../../base/icon";
+} from "../../../base";
 import styles from './styles.module.scss';
 
 export function Contacts() {

@@ -1,6 +1,6 @@
 import {
     Icon    
-} from "../../../base/icon";
+} from "../../../base";
 import styles from './styles.module.scss';
 
 export function CreateContactsList(contact) {
