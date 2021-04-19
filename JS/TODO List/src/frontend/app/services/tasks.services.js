@@ -24,7 +24,7 @@ export class TasksService {
                         }));
                     });
                 } else {
-                    return res.json();
+                    return asJSON(res);
                 }
             });
     }
@@ -34,17 +34,18 @@ export class TasksService {
         return fetchWithLoader(byPath(`/tasks` + q))
             .then(asJSON);
     }
-/*
-    postMovie(movie) {
+
+    postTask(task) {
         const m = {
-            title: movie.title,
-            overview: movie.overview,
-            genres: movie.genres,
-            poster: movie.poster,
-            release_date: movie.releaseDate
+            title: task.title,
+            body: task.body,
+            dedline: task.dedline,
+            date_creating: task.date_creating,
+            status: task.status,
+            priority: task.priority
         }
 
-        return fetchWithLoader(byPath(`/movies`), {
+        return fetchWithLoader(byPath(`/tasks`), {
                 method: 'POST',
                 body: JSON.stringify(m),
                 headers: {
@@ -54,16 +55,16 @@ export class TasksService {
             .then(asJSON)
     }
 
-    putMovie(movieId, movieChanges) {
+    putTask(taskId, taskChanges) {
         const m = {
-            title: movieChanges.title,
-            overview: movieChanges.overview,
-            genres: movieChanges.genres,
-            poster: movieChanges.poster,
-            release_date: movieChanges.releaseDate
-        }
-        console.log('putmovie', m);
-        return fetchWithLoader(byPath(`/movies/${movieId}`), {
+            title: taskChanges.title,
+            body: taskChanges.body,
+            dedline: taskChanges.dedline,
+            date_creating: taskChanges.date_creating,
+            status: taskChanges.status,
+            priority: taskChanges.priority,
+        }        
+        return fetchWithLoader(byPath(`/tasks/${taskId}`), {
                 method: 'PUT',
                 body: JSON.stringify(m),
                 headers: {
@@ -73,10 +74,10 @@ export class TasksService {
             .then(asJSON)
     }
 
-    deleteMovie(movieId) {
-        return fetchWithLoader(byPath(`/movies/${movieId}`), {
+    deleteTask(taskId) {
+        return fetchWithLoader(byPath(`/tasks/${taskId}`), {
                 method: 'DELETE',
             })
             .then(asJSON)
-    } */
+    } 
 }

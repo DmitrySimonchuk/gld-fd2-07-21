@@ -1,7 +1,7 @@
 import { Button, Modal } from "../../../../../base";
 import { TasksService } from "../../../../../../services/tasks.services";
 import { Task } from "../../../task";
-
+import { EditTaskButton } from "../edit-task-button";
 import styles from './styles.module.scss';
 
 export function OpenTaskButton(id) {
@@ -25,18 +25,10 @@ function openTask(e) {
             if (task) {
                 document.body.append(Modal({
                     title: task.title,
-                    body:
-                        /*`
-                            <h5>${movie.overview}<h5>
-                            <p>${new Date(movie.release_date)}</p>
-                            <p>${movie.genres.map(g => `<span class = "badge bg-primary">${g}</span>`).join()}</p>
-                        `,*/
-                        Task(task),
+                    body: Task(task),
                     hasFooterCloseButton: true,
                     footerButtons: [
-                        Button({
-                            content: 'Save changes'
-                        })
+                        EditTaskButton(taskId)
                     ]
                 }));
             }

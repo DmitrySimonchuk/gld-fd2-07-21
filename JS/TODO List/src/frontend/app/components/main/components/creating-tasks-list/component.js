@@ -26,9 +26,9 @@ export function CreatingTasksList({
     cardTitle.classList.add('card-title');
     cardText.classList.add('card-text');
 
-    cardHeader.textContent = createDateInNewFormat_DD_MM_YYYY_HH_MM(+dedline);
-    cardTitle.textContent = title;
-    cardText.textContent = status;
+    cardHeader.textContent = 'dedline: ' + createDateInNewFormat_DD_MM_YYYY_HH_MM(+dedline);
+    cardTitle.textContent = 'task: ' + title;
+    cardText.textContent = 'status: ' + status;
 
     cardBody.append(cardTitle, cardText);
 
