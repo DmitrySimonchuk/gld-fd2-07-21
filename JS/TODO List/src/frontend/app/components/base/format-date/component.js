@@ -11,7 +11,7 @@ export function createDateInNewFormat_DD_MM_YYYY_HH_MM(time) {
     hour = hour.padStart(2, '0');
     minute = minute.padStart(2, '0');    
 
-    const newFormatDate = date + '.' + month + '.' + year + hour + ':' + minute;
+    const newFormatDate = date + '.' + month + '.' + year + ' \n' + hour + ':' + minute;
 
     return newFormatDate;
 } 
