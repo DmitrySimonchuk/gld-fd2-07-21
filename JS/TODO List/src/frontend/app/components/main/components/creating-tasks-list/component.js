@@ -19,6 +19,8 @@ export function CreatingTasksList({
     const cardBody = document.createElement('div');
     const cardTitle = document.createElement('h5');
     const cardText = document.createElement('p');
+
+    card.setAttribute('data-id', id);
     
     card.classList.add('card', 'text-white', 'bg-primary', 'mb-3');
     cardHeader.classList.add('card-header');

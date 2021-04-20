@@ -27,46 +27,46 @@ function CreatingTaskModal({
     hasEditButton = true,
     hasDeleteButton = true
 } = {}) {
-    const card = document.createElement('div');
-    const cardHeader = document.createElement('div');
-    const cardBody = document.createElement('div');
-    const cardTitle = document.createElement('h5');
-    const cardText = document.createElement('p');
-    const cardStatus = document.createElement('p');
-    const cardPriority = document.createElement('p');
-    const cardDateCreating = document.createElement('p');
+    const cardModal = document.createElement('div');
+    const cardModalHeader = document.createElement('div');
+    const cardModalBody = document.createElement('div');
+    const cardModalTitleTask = document.createElement('h5');
+    const cardModalTextTask = document.createElement('p');
+    const cardModalStatusTask = document.createElement('p');
+    const cardModalPriorityTask = document.createElement('p');
+    const cardModalDateCreating = document.createElement('p');
     
-    card.classList.add('card-modal', 'text-white', 'bg-primary', 'mb-3');
-    cardHeader.classList.add('card-modal-header');
-    cardBody.classList.add('card-modal-body', styles.cardBody);
-    cardTitle.classList.add('card-modal-title-task');
-    cardText.classList.add('card-modal-text-task');
-    cardStatus.classList.add('card-modal-status');
-    cardPriority.classList.add('card-modal-priority');
-    cardDateCreating.classList.add('card-modal-date-creating');
+    cardModal.classList.add('card-modal', 'text-white', 'bg-primary', 'mb-3');
+    cardModalHeader.classList.add('card-modal-header');
+    cardModalBody.classList.add('card-modal-body', styles.cardBody);
+    cardModalTitleTask.classList.add('card-modal-title-task');
+    cardModalTextTask.classList.add('card-modal-text-task');
+    cardModalStatusTask.classList.add('card-modal-status');
+    cardModalPriorityTask.classList.add('card-modal-priority');
+    cardModalDateCreating.classList.add('card-modal-date-creating');
 
-    cardHeader.textContent = 'dedline: ' + createDateInNewFormat_DD_MM_YYYY_HH_MM(+dedline);
-    cardTitle.textContent = 'title: ' + title;
-    cardText.textContent = 'task: ' + body;
-    cardStatus.textContent = 'status: ' + status;
-    cardPriority.textContent = 'priority: ' + priority;
-    cardDateCreating.textContent = 'date creating: ' + createDateInNewFormat_DD_MM_YYYY_HH_MM(+date_creating);
+    cardModalHeader.textContent = 'dedline: ' + createDateInNewFormat_DD_MM_YYYY_HH_MM(+dedline);
+    cardModalTitleTask.textContent = 'title: ' + title;
+    cardModalTextTask.textContent = 'task: ' + body;
+    cardModalStatusTask.textContent = 'status: ' + status;
+    cardModalPriorityTask.textContent = 'priority: ' + priority;
+    cardModalDateCreating.textContent = 'date creating: ' + createDateInNewFormat_DD_MM_YYYY_HH_MM(+date_creating);
 
-    cardBody.append(cardTitle, cardText, cardStatus, cardPriority, cardDateCreating);
+    cardModalBody.append(cardModalTitleTask, cardModalTextTask, cardModalStatusTask, cardModalPriorityTask, cardModalDateCreating);
 
     if (hasOpenButton) {
-        cardBody.append(OpenTaskButton(id))
+        cardModalBody.append(OpenTaskButton(id))
     }
 
     if (hasEditButton) {
-        cardBody.append(EditTaskButton(id))
+        cardModalBody.append(EditTaskButton(id))
     }
 
     if (hasDeleteButton) {
-        cardBody.append(DeleteTaskButton(id))
+        cardModalBody.append(DeleteTaskButton(id))
     }
 
-    card.append(cardHeader, cardBody);
+    cardModal.append(cardModalHeader, cardModalBody);
 
-    return card;
+    return cardModal;
 }   
