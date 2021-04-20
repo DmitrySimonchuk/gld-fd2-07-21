@@ -2,7 +2,8 @@ export const IconTypes = {
     Skype: 'skype',
     Phone: 'phone',
     Linkedin: 'linkedin',
-    Envelope: 'envelope',    
+    Envelope: 'envelope',  
+    Plus: 'plus',  
     
     Spinner: 'spinner',
     Star: 'star',
