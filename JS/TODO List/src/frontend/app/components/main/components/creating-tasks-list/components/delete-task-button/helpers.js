@@ -3,10 +3,12 @@ import { closeModal } from "../../../../../base";
 
 export function deleteTask(e) {
     const taskId = e.target.dataset.id;
-    
+    let taskTitle = document.querySelector(`.card[data-id="${taskId}"]`);
+    taskTitle = taskTitle.querySelector('.card-title').textContent;
+        
     $.confirm({
         title: 'Warning!',
-        content: `Confirm you want to delete task with <p><strong> #id ${taskId}!</p></strong>`,
+        content: `Confirm you want to delete <p><strong> ${taskTitle}!</p></strong>`,
         type: 'orange',
         buttons: {
             yes: {

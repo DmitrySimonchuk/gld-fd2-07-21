@@ -39,7 +39,7 @@ function getTaskById(req, res) {
 function deleteTaskById(req, res) {
     const {
         id
-    } = req.params;
+    } = req.params;     
     db.tasks = db.tasks.filter(task => task.id !== +id);
     res.json(id);
 };
