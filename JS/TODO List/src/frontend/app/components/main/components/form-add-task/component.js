@@ -1,5 +1,6 @@
 import { Button } from "../../../base";
 import { formAddTaskClassName } from "./constans";
+import { addTask } from "./helpers";
 
 export function FormAddTask() {
     const form = document.createElement('form');
