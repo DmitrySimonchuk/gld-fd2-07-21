@@ -1,5 +1,6 @@
 import {
-    fetchWithLoader, Modal
+    fetchWithLoader,
+    Modal
 } from "../components/base";
 
 function byPath(path) {
@@ -10,6 +11,19 @@ function byPath(path) {
 
 function asJSON(res) {
     return res.json();
+}
+
+function taskParametres(task) {
+    const parametres = {
+        title: task.title,
+        body: task.body,
+        dedline: task.dedline,
+        date_creating: task.date_creating,
+        status: task.status,
+        priority: task.priority
+    }
+
+    return parametres;
 }
 
 export class TasksService {
@@ -31,23 +45,17 @@ export class TasksService {
 
     getTasks(query) {
         const q = query ? `?q=${query}` : '';
+
         return fetchWithLoader(byPath(`/tasks` + q))
             .then(asJSON);
     }
 
     postTask(task) {
-        const m = {
-            title: task.title,
-            body: task.body,
-            dedline: task.dedline,
-            date_creating: task.date_creating,
-            status: task.status,
-            priority: task.priority
-        }
+        const parametres = taskParametres(task);
 
         return fetchWithLoader(byPath(`/tasks`), {
                 method: 'POST',
-                body: JSON.stringify(m),
+                body: JSON.stringify(parametres),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -56,17 +64,11 @@ export class TasksService {
     }
 
     putTask(taskId, taskChanges) {
-        const m = {
-            title: taskChanges.title,
-            body: taskChanges.body,
-            dedline: taskChanges.dedline,
-            date_creating: taskChanges.date_creating,
-            status: taskChanges.status,
-            priority: taskChanges.priority,
-        }        
+        const parametres = taskParametres(taskChanges);
+
         return fetchWithLoader(byPath(`/tasks/${taskId}`), {
                 method: 'PUT',
-                body: JSON.stringify(m),
+                body: JSON.stringify(parametres),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -79,5 +81,5 @@ export class TasksService {
                 method: 'DELETE',
             })
             .then(asJSON)
-    } 
+    }
 }

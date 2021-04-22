@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 export function OpenTaskButton(id) {
     const btn = Button({
-        classlist: `btn btn-primary ${styles.btnOpenMovie}`,
+        classlist: `btn btn-primary ${styles.btnOpenTask}`,
         content: 'Open',
         clickHandler: openTask
     });
