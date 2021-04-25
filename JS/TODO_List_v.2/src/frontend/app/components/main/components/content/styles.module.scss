@@ -1,0 +1,19 @@
+$gap: 5rem;  
+$above-bootstrap-modal: 1061;
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: $gap;
+    padding-left: $gap;
+    padding-right: $gap;
+    //background-image: url(src/frontend/images/pen.png);
+    //background-image: url(../../../../../images/tree.png);
+}
+
+.drunk-spinner {
+    position: fixed;    
+    z-index: $above-bootstrap-modal;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+}

@@ -1,0 +1,1 @@
+export { EditTaskButton } from './component';

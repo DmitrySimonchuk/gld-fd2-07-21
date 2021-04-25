@@ -1,0 +1,12 @@
+.search-bar {
+    display: flex;
+
+    &,
+    button,
+    input,
+    button i {
+        padding: 0;
+        margin: 5px;
+        margin-right: 10px;
+    }
+}

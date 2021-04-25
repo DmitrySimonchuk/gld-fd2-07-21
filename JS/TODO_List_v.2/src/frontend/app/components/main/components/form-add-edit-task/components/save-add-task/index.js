@@ -1,0 +1,1 @@
+export { SaveAddingTask } from './component';
