@@ -13,7 +13,7 @@ import styles from './styles.module.scss';
 export function Contacts() {
     const contacts = document.createElement('ul');
 
-    contacts.classList.add(styles.contacts);
+    contacts.classList.add(styles.contactes);
     contacts.append(
         CreateContactsList(CreateLink(linkMyContacts.Skype, IconTypes.Skype)), 
         CreateContactsList(CreateLink(linkMyContacts.Telephon, IconTypes.Phone)),

@@ -1,0 +1,27 @@
+.row,
+.col {
+    display: grid;
+}
+
+.row {    
+    grid-template-columns: 5% 25% 30% repeat(2, 20%);
+    grid-column-gap: 0px;
+    padding: 0 5% 0 5%;    
+}
+
+.col {
+    justify-content: center;
+    align-items: end;
+    padding: 5px; 
+    border-bottom: 1px black solid;
+}
+
+.col:first-of-type {
+    align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+    .row {
+        grid-template-columns: 5% 25% 30% repeat(2, 20%);
+    }
+}

@@ -3,7 +3,7 @@ import { deleteTask } from "./helpers";
 
 export function DeleteTaskButton(id) {
     const btn = Button({
-        classlist: `btn btn-danger`,
+        classlist: `btn to-do-btn-danger`,
         content: 'Delete',
         clickHandler: deleteTask
     });

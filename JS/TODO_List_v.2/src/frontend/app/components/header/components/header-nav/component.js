@@ -2,29 +2,39 @@ import {
     AddTaskButton
 } from '../../../main/components/creating-tasks-list/components';
 import {
-    SearchBar
+    SearchBar,    
+    SortForTimeButton,    
+    ThemeSwitcher
 } from './components';
 import {
     PeriodOfTime
 } from './constans';
-import {
-    sortForTime
-} from './helpers';
 import styles from './styles.module.scss';
 
 export function HeaderNav() {
     const headerNav = document.createElement('div');
     const headerNavSort = document.createElement('div');
     const headerNavFind = document.createElement('div');
-    
-    headerNav.classList.add(styles.headerNav);
-    headerNavSort.classList.add(styles.headerNavSort);
+    const headerNavSwitcher = document.createElement('div');
+
+    headerNav.classList.add(styles.headerNav, 'to-do-header-nav');
+    headerNavSort.classList.add(styles.headerNavSort, 'header-nav-sort');
     headerNavFind.classList.add(styles.headerNavFind);
 
-    headerNavSort.append(sortForTime(PeriodOfTime.day), sortForTime(PeriodOfTime.week), sortForTime(PeriodOfTime.year));
+    headerNavSort.classList.add('btn-group');
+    headerNavSort.setAttribute('role', 'group');
+
+    const sortForDay = SortForTimeButton(PeriodOfTime.day);
+    const sortForWeek = SortForTimeButton(PeriodOfTime.week);
+    const sortForMonth = SortForTimeButton(PeriodOfTime.month);
+    const sortForYear = SortForTimeButton(PeriodOfTime.year);
+    const sortForAll = SortForTimeButton(PeriodOfTime.all);
+
+    headerNavSwitcher.append(ThemeSwitcher());
+    headerNavSort.append(sortForDay, sortForWeek, sortForMonth, sortForYear, sortForAll);
     headerNavFind.append(SearchBar(), AddTaskButton());
 
-    headerNav.append(headerNavSort, headerNavFind);
+    headerNav.append(headerNavSwitcher, headerNavSort, headerNavFind);
 
     return headerNav;
 }

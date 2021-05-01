@@ -8,12 +8,18 @@ export function SaveEditingTask(e) {
 
     const {
         title: titleEl,
-        body: bodyEl
+        body: bodyEl,
+        deadline: deadlineEl,
+        status: statusEl,
+        priority: priorityEl
     } = form.elements;
     
     const taskId = form.dataset.id;
     const title = titleEl.value;
     const body = bodyEl.value;
+    const deadline = deadlineEl.value;
+    const status = statusEl.value;
+    const priority = priorityEl.value;
 
     const tasksService = new TasksService();
     
@@ -21,15 +27,25 @@ export function SaveEditingTask(e) {
 
     tasksService.putTask(taskId, {        
         title,
-        body
+        body,
+        deadline,
+        status,
+        priority
     }).then(task => {       
-        const card = document.querySelector(`.card[data-id="${taskId}"]`);
+        const taskRow = document.querySelector(`.task-row[data-id="${taskId}"]`);
 
-        const cardTitleEl = card.querySelector('.card-title');
+        const titleEl = taskRow.querySelector('.task-title');
         //const cardTextEl = card.querySelector('.form-body');
+        const deadlineEl = taskRow.querySelector('.task-deadline');
+        const statusEl = taskRow.querySelector('.task-status');
+        //const priorityEl = taskRow.querySelector('.task-priority');
 
-        cardTitleEl.textContent = task.title;
+        titleEl.textContent = task.title;
         //cardTextEl.textContent = task.body;
+        deadlineEl.textContent = task.deadline;
+        statusEl.textContent = task.status;
+        //priorityEl.textContent = task.priority;
+console.log('test 2   -- ' + task.deadline);
 
         closeModal(e);
 

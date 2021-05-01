@@ -4,42 +4,42 @@
             "id": 1,
             "title": "Hello!",
             "body": "Add new task in tomorrow",
-            "dedline": "1618095600000",
+            "deadline": "1619539000000",
             "date_creating": "1618093800000",
-            "status": "TODO",
-            "priority": "important"
+            "status": "To do",
+            "priority": "Important!"
         }, 
         {
             "id": 2,            
             "title": "Homework JS",
             "body": "Add new task",
-            "dedline": "1618779600000",
+            "deadline": "1622779600000",
             "date_creating": "1618520400000",
-            "status": "TODO",
-            "priority": "important"
+            "status": "To do",
+            "priority": "Important!"
         }, {
             "id": 3,
             "title": "Learn JS!",
             "body": "Read about JSON",
-            "dedline": "1620687600000",
+            "deadline": "1622387600000",
             "date_creating": "1618779600000",
-            "status": "IN PROGRESS",
-            "priority": "important"
+            "status": "In progress",
+            "priority": "Important!"
         }, {
             "id": 4,
             "title": "Read book JS!",
             "body": "Read book JS about array",
-            "dedline": "1620860400000",
+            "deadline": "1620860400000",
             "date_creating": "1618255800000",
-            "status": "IN PROGRESS",
-            "priority": "important"
+            "status": "In progress",
+            "priority": "Important!"
         }, {
             "id": 5,
             "title": "Read book JS yet!",
             "body": "Read book JS about array and function",
-            "dedline": "1620846000000",
+            "deadline": "1620846000000",
             "date_creating": "1618254000000",
-            "status": "IN PROGRESS",
+            "status": "In progress",
             "priority": "so-so"
         }
     ]    

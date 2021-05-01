@@ -1,0 +1,77 @@
+$main-font-weight: 700;
+
+.logo-name {
+    font-family: $title-font;
+    font-size: 2.5rem;
+    font-weight: $main-font-weight;
+}
+
+.header-nav-sort {
+    font-family: $main-font;
+    font-size: 1.2rem;
+}
+
+.main {
+    font-family: $main-font;
+    font-size: 1.3rem;
+}
+
+.footer {
+    font-family: $main-font;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: 1.2rem;
+}
+
+.my-button {
+    font-size: 1.2rem;
+    font-weight: $main-font-weight;
+}
+
+.modal {
+    font-family: $main-font;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+    .logo-name {
+        font-size: 1.7rem;
+    }
+
+    .header-nav-sort,
+    .main,
+    .my-button {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .main,
+    .my-button,
+    .footer, 
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .main,
+    .my-button,
+    .footer, 
+    .copyright {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {    
+    .my-button {
+        font-size: 0.45rem;
+    }
+
+    .to-do-header-nav {        
+        margin: 0 -5% 0 -10%;
+    }
+}

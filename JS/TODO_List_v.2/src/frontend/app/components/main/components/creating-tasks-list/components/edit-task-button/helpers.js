@@ -25,7 +25,10 @@ export function editTask(e) {
                 formTaskClassName: formEditTaskClassName,
                 taskValues: {
                     titleInput: '',
-                    taskBody: ''
+                    taskBody: '',
+                    deadline: '', 
+                    status: '',      
+                    priority: '',           
                 }
             });
             form.setAttribute('data-id', taskId);
@@ -37,8 +40,14 @@ export function editTask(e) {
 
             const titleEl = form.elements.title;
             const bodyEl = form.elements.body;
+            const deadlineEl = form.elements.deadline;
+            const statusEl = form.elements.status;
+            const priorityEl = form.elements.priority;
 
             titleEl.value = task.title;
             bodyEl.value = task.body;
+            deadlineEl.value = task.deadline;
+            statusEl.value = task.status;
+            priorityEl.value = task.priority;
         });
 }

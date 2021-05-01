@@ -6,7 +6,7 @@ export function Copyright() {
     const trade = String.fromCharCode(8482);
 
     copyright.textContent = `${copy} Copyright Dmitry Simanchuk ${trade}`;
-    copyright.classList.add(styles.copyright);
+    copyright.classList.add(styles.copyright, 'copyright');
 
     return copyright;
 }

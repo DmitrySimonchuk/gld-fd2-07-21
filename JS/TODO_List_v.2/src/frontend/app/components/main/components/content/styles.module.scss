@@ -1,18 +1,25 @@
-$gap: 5rem;  
 $above-bootstrap-modal: 1061;
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: $gap;
-    padding-left: $gap;
-    padding-right: $gap;
-    //background-image: url(src/frontend/images/pen.png);
-    //background-image: url(../../../../../images/tree.png);
+    padding: 20px 0 20px 0;
+    margin: 3% 5% 3% 5%;
+    border-radius: 10px;
+
+    .theader {
+        font-weight: 700;
+    }
+
+    .tfooter {
+        height: 50px;
+    }
+}
+
+.content-container {
+    padding: 0px;
 }
 
 .drunk-spinner {
-    position: fixed;    
+    position: fixed;
     z-index: $above-bootstrap-modal;
     left: calc(50% - 32px);
     top: calc(50% - 32px);

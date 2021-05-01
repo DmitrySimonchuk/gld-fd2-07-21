@@ -22,7 +22,7 @@ export function ModalFooter({
 
 function ModalCloseFooterButton() {
     const btn = Button({
-        classlist: 'btn btn-secondary',
+        classlist: 'btn',
         content: 'Close'
     });
 

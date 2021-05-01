@@ -1,5 +1,7 @@
+import styles from './styles.module.scss';
+
 export function Button({
-    classlist = 'btn btn-primary',
+    classlist = styles.myButton, 
     content = '',
     clickHandler,
     type = 'button'
@@ -9,6 +11,7 @@ export function Button({
     btn.setAttribute('type', type);
     btn.classList.add(...classlist.split(' '));
     btn.innerHTML = content;
+    btn.classList.add('my-button');
 
     if (clickHandler) {
         btn.addEventListener('click', clickHandler);

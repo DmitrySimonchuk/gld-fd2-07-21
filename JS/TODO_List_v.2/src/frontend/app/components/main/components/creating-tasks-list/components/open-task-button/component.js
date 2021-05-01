@@ -1,10 +1,15 @@
-import { Button } from "../../../../../base";
-import { openTask } from "./helpers";
+import {
+    Button
+} from "../../../../../base";
+import {
+    openTask
+} from "./helpers";
+import stylesBtn from '../../../../../base/button/styles.module.scss';
 import styles from './styles.module.scss';
 
 export function OpenTaskButton(id) {
     const btn = Button({
-        classlist: `btn btn-primary ${styles.btnOpenTask}`,
+        classlist: `btn ${stylesBtn.myButton}`,
         content: 'Open',
         clickHandler: openTask
     });

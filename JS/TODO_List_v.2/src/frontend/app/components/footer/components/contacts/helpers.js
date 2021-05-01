@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 export function CreateContactsList(contact) {
     const contactsListen = document.createElement('li');
 
-    contactsListen.classList.add(styles.li);
+    contactsListen.classList.add(styles.contactesLi, 'contactes-li');
     contactsListen.append(contact);
 
     return contactsListen;

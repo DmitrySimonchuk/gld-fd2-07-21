@@ -8,6 +8,7 @@ export function Header() {
     header.append(Logo(), HeaderNav() /*, SearchBar(), UserControlPanel(), ThemeSwitcher()*/);
 
     header.classList.add(styles.header, 'm-4');
+    header.setAttribute('id', 'header');
 
     return header;
 }

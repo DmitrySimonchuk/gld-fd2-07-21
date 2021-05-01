@@ -21,18 +21,17 @@ const frontConfig = {
         // new BundleAnalyzerPlugin()    - for analize
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.s[ac]ss$/i,
-                exclude: /\.module.s[ac]ss$/i,           
+                exclude: /\.module.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ],
-            },
+            },            
             {
-                test: /\.module.s[ac]ss$/i,               
+                test: /\.module.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -42,11 +41,21 @@ const frontConfig = {
                                 compileType: 'module',
                                 localIdentName: '[local]_[hash:base64:5]',
                                 exportLocalsConvention: 'camelCaseOnly'
-                            }                            
+                            }
                         }
                     },
                     'sass-loader'
                 ],
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        mimetype: 'image/png',
+                        name: 'assets/[name].[hash:8].[ext]'
+                    },
+                }, ],
             },
         ],
     },

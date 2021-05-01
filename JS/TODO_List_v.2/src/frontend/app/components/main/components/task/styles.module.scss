@@ -3,3 +3,21 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+:global {
+
+    .bg-modal-body,
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .td-modal {
+        border-bottom: 1px black solid;
+        font-weight: 700;
+    }
+
+    .date-modal {
+        text-align: center;
+        font-weight: 400;
+    }
+}

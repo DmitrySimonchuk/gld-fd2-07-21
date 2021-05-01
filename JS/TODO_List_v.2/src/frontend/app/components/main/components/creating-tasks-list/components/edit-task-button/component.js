@@ -3,7 +3,7 @@ import { editTask } from "./helpers";
 
 export function EditTaskButton(id) {
     const btn = Button({
-        classlist: `btn btn-secondary`,
+        classlist: `btn`,
         content: 'Edit',
         clickHandler: editTask
     });

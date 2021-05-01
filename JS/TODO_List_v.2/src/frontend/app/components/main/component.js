@@ -6,7 +6,8 @@ import styles from './styles.module.scss';
 export function Main() {
     const main = document.createElement('main');
 
-    main.classList.add(styles.main);
+    main.classList.add(styles.main, 'main');
+    main.setAttribute('id', 'main');
 
     main.append(Content());
 

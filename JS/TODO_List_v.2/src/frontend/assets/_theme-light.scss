@@ -1,0 +1,62 @@
+body.theme-light {
+    background: $global-BG-color-Theme-Light;
+
+    .content {
+        background-color: $content-BG-color-Theme-Light;
+    }
+
+    #main {
+        background-color: $content-BG-color-Theme-Light;
+        background-image: $main-img-Theme-Light;
+    }
+
+    .my-button {
+        background-color: $btn-BG-color-Theme-Light;
+    }
+
+    .my-button:hover {
+        background-color: $btn-BG-color-hover-Theme-Light;
+    }
+
+    .contactes-li {
+        a {
+            color: $contactes-li-color-Theme-Light;
+        }
+
+        a:hover {
+            color: $contactes-li-color-hover-Theme-Light;
+        }
+    }
+
+    .loading {
+        color: $spinner-loading-color-Theme-Light;
+    }
+
+    .text-modal {
+        color: $text-color-modal-Theme-Light;
+    }
+
+    .bg-modal-body {
+        background-color: $bg-modal-body-Theme-Light;
+    }
+
+    .modal-content {
+        background-image: $main-img-Theme-Light;        
+    }
+
+    .to-do-btn-danger {
+        background-color: $danger-Theme-Light;
+    }
+
+    .to-do-btn-danger:hover {
+        background-color: $danger-hover-Theme-Light;
+    }
+
+    .modal-header {
+        color: $bg-modal-body-Theme-Light;
+    }
+
+    .form-label {
+        color: $bg-modal-body-Theme-Light;
+    }
+}

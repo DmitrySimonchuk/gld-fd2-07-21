@@ -16,7 +16,7 @@ export function addTask() {
         formTaskClassName: formAddTaskClassName,
         taskValues: {
             titleInput: 'task title',
-            taskBody: 'task body'
+            taskBody: 'task body',            
         }
     });
 

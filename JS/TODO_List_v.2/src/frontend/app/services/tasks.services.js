@@ -17,7 +17,7 @@ function taskParametres(task) {
     const parametres = {
         title: task.title,
         body: task.body,
-        dedline: task.dedline,
+        deadline: task.deadline,
         date_creating: task.date_creating,
         status: task.status,
         priority: task.priority

@@ -3,9 +3,9 @@ import { closeModal } from "../../../../../base";
 
 export function deleteTask(e) {
     const taskId = e.target.dataset.id;
-    let taskTitle = document.querySelector(`.card[data-id="${taskId}"]`);
-    taskTitle = taskTitle.querySelector('.card-title').textContent;
-        
+    const taskRow = document.querySelector(`.task-row[data-id="${taskId}"]`);
+    const taskTitle = taskRow.querySelector('.task-title').textContent;
+            
     $.confirm({
         title: 'Warning!',
         content: `Confirm you want to delete <p><strong> ${taskTitle}!</p></strong>`,
@@ -18,7 +18,7 @@ export function deleteTask(e) {
 
                     tasksService.deleteTask(taskId)                        
                         .then(deleteTaskId => {
-                            document.querySelector(`.card[data-id="${deleteTaskId}"]`)?.remove();
+                            document.querySelector(`.task-row[data-id="${deleteTaskId}"]`)?.remove();
                             
                             closeModal(e);
 
