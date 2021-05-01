@@ -32,7 +32,11 @@ export function CreateTable({
 
     row.classList.add(styles.row, 'task-row');
     colNumber.classList.add(styles.col);
+
     colDeadline.classList.add(styles.col, 'task-deadline');
+    colDeadlineDate.classList.add(styles.col, 'task-deadline-date');
+    colDeadlineTime.classList.add(styles.col, 'task-deadline-time');
+
     colTitle.classList.add(styles.col, 'task-title');
     colStatus.classList.add(styles.col, 'task-status');
     colBtn.classList.add(styles.col);

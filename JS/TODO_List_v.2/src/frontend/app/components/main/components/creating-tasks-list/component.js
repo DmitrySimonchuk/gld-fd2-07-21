@@ -27,6 +27,16 @@ export function CreatingTasksList({
     });
         
     row.setAttribute('data-id', id);
+
+    if (status === 'Done') {
+        row.classList.add('done');
+    }
     
+    if (priority === 'Important!') {
+        if (status !== 'Done') {
+            row.classList.add('important-task');
+        }        
+    }
+
     return row;
 }

@@ -24,3 +24,15 @@ $above-bootstrap-modal: 1061;
     left: calc(50% - 32px);
     top: calc(50% - 32px);
 }
+
+:global {
+
+    .done {
+        text-decoration: line-through;        
+    }
+
+    .important-task {
+        color: red;
+        font-weight: 700;
+    }
+}

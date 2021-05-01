@@ -58,7 +58,7 @@ export function FormAddEditTask({
     //status.value = taskValues.status;
     //priority.value = taskValues.priority;
     
-    //deadlineInput.setAttribute('required', '');
+    deadlineInput.setAttribute('required', '');
     deadlineInput.setAttribute('name', 'deadline');
     deadlineInput.setAttribute("type", "datetime-local");    
     
@@ -74,10 +74,10 @@ export function FormAddEditTask({
     statusSelect.setAttribute('name', 'status');
     statusOptionToDo.setAttribute('value', 'To do');
     statusOptionInProgress.setAttribute('value', 'In progress');
-    statusOptionDone.setAttribute('value', 'done');
+    statusOptionDone.setAttribute('value', 'Done');
     
     prioritySelect.setAttribute('name', 'priority');
-    priorityOptionSoSo.setAttribute('value', 'so-so');
+    priorityOptionSoSo.setAttribute('value', 'So-so');
     priorityOptionImportant.setAttribute('value', 'Important!');
     
     deadlineLabel.textContent = 'Dedline:';

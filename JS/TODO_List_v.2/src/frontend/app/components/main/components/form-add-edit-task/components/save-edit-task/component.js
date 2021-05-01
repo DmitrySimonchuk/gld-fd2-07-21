@@ -1,5 +1,11 @@
-import { TasksService } from "../../../../../../services/tasks.services";
-import { closeModal } from "../../../../../base";
+import { 
+    TasksService 
+} from "../../../../../../services/tasks.services";
+import { 
+    closeModal, createDateInNewFormat_DD_MM_YYYY, 
+    createDateInNewFormat_DD_MM_YYYY_HH_MM, 
+    createDateInNewFormat_HH_MM} from "../../../../../base";
+import { createDateInNewFormat_ms } from "../../../../../base";
 
 export function SaveEditingTask(e) {
     e.preventDefault()
@@ -21,6 +27,7 @@ export function SaveEditingTask(e) {
     const status = statusEl.value;
     const priority = priorityEl.value;
 
+console.log('test 7   -- ' + deadline);
     const tasksService = new TasksService();
     
     document.querySelector('modal')?.remove();
@@ -37,15 +44,44 @@ export function SaveEditingTask(e) {
         const titleEl = taskRow.querySelector('.task-title');
         //const cardTextEl = card.querySelector('.form-body');
         const deadlineEl = taskRow.querySelector('.task-deadline');
+        const deadlineElDate = taskRow.querySelector('.task-deadline-date');
+        const deadlineElTime = taskRow.querySelector('.task-deadline-time');
+
         const statusEl = taskRow.querySelector('.task-status');
         //const priorityEl = taskRow.querySelector('.task-priority');
 
+//console.log(typeOf(task.deadline) );
+console.log('test 2   -- ' + task.deadline);
+//task.deadline = createDateInNewFormat_DD_MM_YYYY_HH_MM(Date.parse(task.deadline));
+console.log('test 3   -- ' + task.deadline);
+
         titleEl.textContent = task.title;
         //cardTextEl.textContent = task.body;
-        deadlineEl.textContent = task.deadline;
+        //deadlineEl.textContent = task.deadline;
+        deadlineElDate.textContent = createDateInNewFormat_DD_MM_YYYY(Date.parse(task.deadline));
+        deadlineElTime.textContent = createDateInNewFormat_HH_MM(Date.parse(task.deadline));
+                
         statusEl.textContent = task.status;
         //priorityEl.textContent = task.priority;
-console.log('test 2   -- ' + task.deadline);
+
+        if (task.status === 'Done') {            
+            taskRow.classList.add('done'); 
+            taskRow.classList.remove('important-task');                  
+        }
+
+        if (task.priority === 'Important!') {
+            if (task.status !== 'Done') {
+                taskRow.classList.remove('done');
+                taskRow.classList.add('important-task');
+            }        
+        }
+
+        if (task.priority === 'So-so') {   
+            if (task.status !== 'Done'){
+                taskRow.classList.remove('done');
+                taskRow.classList.remove('important-task');
+            }                              
+        }
 
         closeModal(e);
 

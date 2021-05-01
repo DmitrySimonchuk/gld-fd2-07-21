@@ -42,21 +42,10 @@ export function createDateInNewFormat_HH_MM(time) {
 
     return date;
 }
-/*
-export function createDateInNewFormat_YYYY_MM_DDTHH_mm(time) {
-    const year = new Date(time).getFullYear();
 
-    let date = new Date(time).getDate() + '';
-    let month = new Date(time).getMonth() + 1 + '';
-    let hour = new Date(time).getHours() + '';
-    let minute = new Date(time).getMinutes() + '';
+export function createDateInNewFormat_ms(time) {
+    
+    let date = Date.parse(time);
 
-    date = date.padStart(2, '0');
-    month = month.padStart(2, '0');
-    hour = hour.padStart(2, '0');
-    minute = minute.padStart(2, '0');
-
-    const newFormatDate = date + '.' + month + '.' + year + ' \n' + hour + ':' + minute;
-
-    return newFormatDate;
-}*/
+    return date;
+}

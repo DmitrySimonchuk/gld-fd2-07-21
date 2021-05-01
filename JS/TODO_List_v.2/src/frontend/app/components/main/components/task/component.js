@@ -81,6 +81,12 @@ function CreatingTaskModal({
     cardModalDateCreatingTime.classList.add('date-modal');
 
 console.log('test   ' + deadline);
+console.log(typeof(deadline) );
+    if (deadline.includes('T')) {
+        deadline = Date.parse(deadline);
+        console.log('test   5   ' + deadline);
+    }
+
     cardModalHeader.textContent = 'deadline: ';
     cardModalDeadlineDate.textContent = createDateInNewFormat_DD_MM_YYYY(+deadline);
     cardModalDeadlineTime.textContent = createDateInNewFormat_HH_MM(+deadline);

@@ -23,7 +23,7 @@ export function SaveAddingTask(e) {
 
     const title = titleEl.value;
     const body = bodyEl.value;
-    const deadline = Date.parse(deadlineEl.value);
+    const deadline = Date.parse(deadlineEl.value) + '';
     const status = statusEl.value;
     const priority = priorityEl.value;
 
