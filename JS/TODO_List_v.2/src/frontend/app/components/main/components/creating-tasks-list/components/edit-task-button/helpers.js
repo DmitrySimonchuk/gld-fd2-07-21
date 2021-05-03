@@ -46,7 +46,11 @@ export function editTask(e) {
 
             titleEl.value = task.title;
             bodyEl.value = task.body;
-            deadlineEl.value = task.deadline;
+
+            const dateDedline = new Date(+task.deadline).toLocaleString();
+        
+            deadlineEl.value = dateDedline;
+            
             statusEl.value = task.status;
             priorityEl.value = task.priority;
         });

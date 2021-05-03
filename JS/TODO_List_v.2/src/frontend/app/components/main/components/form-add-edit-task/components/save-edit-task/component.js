@@ -23,11 +23,12 @@ export function SaveEditingTask(e) {
     const taskId = form.dataset.id;
     const title = titleEl.value;
     const body = bodyEl.value;
-    const deadline = deadlineEl.value;
+    const deadline = Date.parse(deadlineEl.value) + '';
     const status = statusEl.value;
     const priority = priorityEl.value;
 
 console.log('test 7   -- ' + deadline);
+console.log('test 7 1   -- ' + typeof(deadline));
     const tasksService = new TasksService();
     
     document.querySelector('modal')?.remove();
@@ -58,8 +59,8 @@ console.log('test 3   -- ' + task.deadline);
         titleEl.textContent = task.title;
         //cardTextEl.textContent = task.body;
         //deadlineEl.textContent = task.deadline;
-        deadlineElDate.textContent = createDateInNewFormat_DD_MM_YYYY(Date.parse(task.deadline));
-        deadlineElTime.textContent = createDateInNewFormat_HH_MM(Date.parse(task.deadline));
+        deadlineElDate.textContent = createDateInNewFormat_DD_MM_YYYY(+task.deadline);
+        deadlineElTime.textContent = createDateInNewFormat_HH_MM(+task.deadline);
                 
         statusEl.textContent = task.status;
         //priorityEl.textContent = task.priority;

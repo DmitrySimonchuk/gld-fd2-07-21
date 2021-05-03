@@ -15,7 +15,7 @@ export function sortForTime(sectionTime) {
     const contentContainer = document.querySelector(`.${contentStyles.contentContainer}`);
     const fr = document.createDocumentFragment();
 
-    const startTime = Date.now().getTime();
+    const startTime = Date.now();
 
     const endTimeDay = startTime + 24 * 60 * 60 * 1000;
     const endTimeWeek = startTime + 7 * 24 * 60 * 60 * 1000;
