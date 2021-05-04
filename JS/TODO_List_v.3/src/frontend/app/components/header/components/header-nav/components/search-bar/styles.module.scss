@@ -1,0 +1,16 @@
+%btn-shared {
+    padding: 0;
+    margin: 5px;
+    margin-right: 10px;
+}
+
+.search-bar {
+    display: flex;
+
+    &,
+    button,
+    input,
+    button i {
+        @extend %btn-shared;
+    }
+}

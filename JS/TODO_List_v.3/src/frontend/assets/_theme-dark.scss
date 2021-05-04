@@ -1,0 +1,69 @@
+body.theme-dark {
+    background: $global-BG-color-Theme-Dark;
+    color: $global-color-Theme-Dark;
+
+    .content {
+        background-color: $content-BG-color-Theme-Dark;
+    }
+
+    #main {
+        background-color: $content-BG-color-Theme-Dark;
+        background-image: $main-img-Theme-Dark;
+    }
+
+    .my-button {
+        background-color: $btn-BG-color-Theme-Dark;
+        color: $btn-color-Theme-Dark;
+    }
+
+    .my-button:hover {
+        background-color: $btn-BG-color-hover-Theme-Dark;
+    }
+
+    .contactes-li {
+        a {
+            color: $contactes-li-color-Theme-Dark;
+        }
+
+        a:hover {
+            color: $contactes-li-color-hover-Theme-Dark;
+        }
+    }
+
+    .loading {
+        color: $spinner-loading-color-Theme-Dark;
+    }
+
+    .text-modal, 
+    #userId  {
+        color: $text-color-modal-Theme-Dark;
+    }
+
+    .bg-modal-body {
+        background-color: $bg-modal-body-Theme-Dark;
+    }
+
+    .modal-content {
+        background-color: $modal-content-Theme-Dark;        
+    }
+
+    .to-do-btn-danger {
+        background-color: $danger-Theme-Dark;
+    }
+
+    .to-do-btn-danger:hover {
+        background-color: $danger-hover-Theme-Dark;
+    }
+
+    .modal-header {
+        color: $text-color-modal-Theme-Dark;
+    }
+
+    .form-label {
+        color: $text-color-modal-Theme-Dark;
+    }
+
+    .form-check-in{
+        background-image: $main-img-Theme-Dark;
+    }
+}

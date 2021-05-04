@@ -1,0 +1,4 @@
+export {
+    FormCheckIn
+}
+from './component';

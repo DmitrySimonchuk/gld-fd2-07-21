@@ -1,0 +1,76 @@
+{    
+    "tasks": [
+        {
+            "id": 1,
+            "userId": "admin",
+            "password": "1111",
+            "title": "Hello!",
+            "body": "Add new task in tomorrow",
+            "deadline": "1619539000000",
+            "date_creating": "1618093800000",
+            "status": "To do",
+            "priority": "Important!"
+        }, 
+        {
+            "id": 2,
+            "userId": "admin",   
+            "password": "1111",        
+            "title": "Homework JS",
+            "body": "Add new task",
+            "deadline": "1622779600000",
+            "date_creating": "1618520400000",
+            "status": "Done",
+            "priority": "Important!"
+        }, {
+            "id": 3,
+            "userId": "admin",
+            "password": "1111",
+            "title": "Learn JS!",
+            "body": "Read about JSON",
+            "deadline": "1622387600000",
+            "date_creating": "1618779600000",
+            "status": "In progress",
+            "priority": "Important!"
+        }, {
+            "id": 4,
+            "userId": "admin",
+            "password": "1111",
+            "title": "Read book JS!",
+            "body": "Read book JS about array",
+            "deadline": "1620860400000",
+            "date_creating": "1618255800000",
+            "status": "In progress",
+            "priority": "Important!"
+        }, {
+            "id": 5,
+            "userId": "admin",
+            "password": "1111",
+            "title": "Read book JS yet!",
+            "body": "Read book JS about array and function",
+            "deadline": "1620846000000",
+            "date_creating": "1618254000000",
+            "status": "In progress",
+            "priority": "So-so"
+        }, {
+            "id": 10,
+            "userId": "user",
+            "password": "2222",
+            "title": "New user 1",
+            "body": "New user body 2",
+            "deadline": "1620846000000",
+            "date_creating": "1618254000000",
+            "status": "In progress",
+            "priority": "So-so"
+        }, {
+            "id": 11,
+            "userId": "user",
+            "password": "2222",
+            "title": "New user 1",
+            "body": "New user body 2",
+            "deadline": "1620846000000",
+            "date_creating": "1618254000000",
+            "status": "In progress",
+            "priority": "So-so"
+        }
+    ]    
+}

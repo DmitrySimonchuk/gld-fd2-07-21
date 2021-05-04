@@ -1,0 +1,19 @@
+%header-display-shared {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-find,
+.header-nav-sort,
+.header-nav {
+    @extend %header-display-shared;
+}
+
+.header-nav {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header-nav-find {
+    justify-content: space-between;
+}

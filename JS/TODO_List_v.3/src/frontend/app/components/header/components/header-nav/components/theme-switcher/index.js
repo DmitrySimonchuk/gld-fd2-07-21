@@ -1,0 +1,4 @@
+export {
+    ThemeSwitcher
+}
+from './component';

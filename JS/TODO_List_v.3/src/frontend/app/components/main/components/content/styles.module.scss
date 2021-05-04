@@ -1,0 +1,38 @@
+$above-bootstrap-modal: 1061;
+
+.content {
+    padding: 20px 0 20px 0;
+    margin: 3% 5% 3% 5%;
+    border-radius: 10px;
+
+    .theader {
+        font-weight: 700;
+    }
+
+    .tfooter {
+        height: 50px;
+    }
+}
+
+.content-container {
+    padding: 0px;
+}
+
+.drunk-spinner {
+    position: fixed;
+    z-index: $above-bootstrap-modal;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+}
+
+:global {
+
+    .done {
+        text-decoration: line-through;        
+    }
+
+    .important-task {
+        color: red;
+        font-weight: 700;
+    }
+}
