@@ -2,6 +2,7 @@ import {
     TasksService
 } from "../../../../../../services/tasks.services";
 import {
+    createDateInMachFormat,
     Modal
 } from "../../../../../base";
 import {
@@ -43,7 +44,7 @@ export function editTask(e) {
             const deadlineEl = form.elements.deadline;
             const statusEl = form.elements.status;
             const priorityEl = form.elements.priority;
-            const dateDedline = new Date(+task.deadline).toLocaleString();
+            const dateDedline = createDateInMachFormat(task.deadline);
 
             titleEl.value = task.title;
             bodyEl.value = task.body;        

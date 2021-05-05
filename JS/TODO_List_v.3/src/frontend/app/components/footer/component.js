@@ -6,6 +6,7 @@ export function Footer() {
     const footer = document.createElement('footer');
 
     footer.classList.add(styles.footer, 'footer');
+    
     footer.append(Copyright(), Contacts());
 
     return footer;

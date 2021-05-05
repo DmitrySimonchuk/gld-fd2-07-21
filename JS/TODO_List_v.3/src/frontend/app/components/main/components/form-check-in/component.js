@@ -1,15 +1,19 @@
 import {
-    AddTaskButton
-} from "../creating-tasks-list/components";
-import {
-    OpenUserButton
+    OpenUserButton,
+    AddUserButton,
+    DelUserButton,
+    UpdateUserPassButton
 } from "./components";
+import { 
+    labelFormCheckIn 
+} from "./constant";
 import styles from './styles.module.scss';
 
-export function FormCheckIn({
-    hasAddUserButton = true,
+export function FormCheckIn({    
     hasOpenUserButton = true,
-    hasFooterCloseButton = true
+    hasAddUserButton = true,
+    hasDelUserButton = true,
+    hasUpdatePassUserButton = true
 }) {
     const form = document.createElement('form');
 
@@ -18,6 +22,9 @@ export function FormCheckIn({
 
     const passwordLabel = document.createElement('label');
     const passwordInput = document.createElement('input');
+
+    const passwordRepeatLabel = document.createElement('label');
+    const passwordRepeatInput = document.createElement('input');
 
     const btnContainer = document.createElement('div');
 
@@ -28,6 +35,9 @@ export function FormCheckIn({
 
     passwordLabel.classList.add('mb-3', 'form-label');
     passwordInput.classList.add('form-control', 'mb-3');
+
+    passwordRepeatLabel.classList.add('mb-3', 'form-label');
+    passwordRepeatInput.classList.add('form-control', 'mb-3');
 
     userInput.setAttribute('required', '');
     userInput.setAttribute('name', 'user');
@@ -40,28 +50,47 @@ export function FormCheckIn({
     passwordInput.setAttribute('type', 'password');
     passwordInput.setAttribute('placeholder', `Password`);
 
-    userLabel.textContent = 'User:';
-    passwordLabel.textContent = 'Password:';
+    passwordRepeatInput.setAttribute('required', '');
+    passwordRepeatInput.setAttribute('maxlength', '4');
+    passwordRepeatInput.setAttribute('name', 'passwordRepeat');
+    passwordRepeatInput.setAttribute('type', 'password');
+    passwordRepeatInput.setAttribute('placeholder', `Password`);
 
+    userLabel.textContent = labelFormCheckIn.User;
+    passwordLabel.textContent = labelFormCheckIn.Password;
+    passwordRepeatLabel.textContent = labelFormCheckIn.RepeatPassword;
 
     userLabel.append(userInput);
     passwordLabel.append(passwordInput);
+    
+    form.append(
+        userLabel,
+        passwordLabel
+    );
 
     if (hasOpenUserButton) {
         btnContainer.append(OpenUserButton());
     };
 
-    if (hasFooterCloseButton) {
-        btnContainer.append(AddTaskButton());
-    };
-
     if (hasAddUserButton) {
-        btnContainer.append(AddTaskButton());
+        passwordRepeatLabel.append(passwordRepeatInput);
+        form.append(passwordRepeatLabel);
+        btnContainer.append(AddUserButton());
     };
 
-    form.append(
-        userLabel,
-        passwordLabel,       
+    if (hasDelUserButton) {
+        passwordRepeatLabel.append(passwordRepeatInput);
+        form.append(passwordRepeatLabel);
+        btnContainer.append(DelUserButton());
+    };
+
+    if (hasUpdatePassUserButton) {
+        passwordRepeatLabel.append(passwordRepeatInput);
+        form.append(passwordRepeatLabel);
+        btnContainer.append(UpdateUserPassButton());
+    };
+
+    form.append(       
         btnContainer
     );
 

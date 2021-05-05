@@ -11,6 +11,7 @@ export const IconTypes = {
     Pencil: 'pencil',
     Sun: 'sun-o',
     Moon: 'moon-o',
+    User: 'user',
     
     Spinner: 'spinner',
     Star: 'star',

@@ -15,7 +15,12 @@ import styles from './styles.module.scss';
 
 export function Content() { // section
 
-    CheckIn();  
+    CheckIn({
+        hasOpenUserButton: false,
+        hasAddUserButton: false,
+        hasDelUserButton: false,
+        hasUpdatePassUserButton: true
+    });  
     
     const userId = '';    
 

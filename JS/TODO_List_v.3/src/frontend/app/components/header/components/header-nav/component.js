@@ -27,6 +27,7 @@ export function HeaderNav() {
     headerNavSort.classList.add(styles.headerNavSort, 'header-nav-sort');
     headerNavFind.classList.add(styles.headerNavFind);
     headerNavSort.classList.add('btn-group');
+    headerNavSwitcher.classList.add('todos-switcher');
     
     headerNavSort.setAttribute('role', 'group');
 

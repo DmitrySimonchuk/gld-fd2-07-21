@@ -1,19 +1,19 @@
 import {
-    openUser
+    delUser
 } from './helpers';
 import {
     Button
 } from '../../../../../base';
 import stylesBtn from '../../../../../base/button/styles.module.scss';
 
-export function OpenUserButton() {
-    const openUserBtnText = 'Open';
+export function DelUserButton() {
+    const addUserBtnText = 'Delete User';
 
     const btn = Button({
         classlist: `${stylesBtn.myButton}`,
-        content: openUserBtnText,
+        content: addUserBtnText,
         type: 'submit',
-        clickHandler: openUser
+        clickHandler: delUser
     });
 
     return btn;

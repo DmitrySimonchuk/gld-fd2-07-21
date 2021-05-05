@@ -59,7 +59,7 @@ export function SaveAddingTask(e) {
 
             $.alert({
                 title: 'Alert!',
-                content: 'Simple alert!'
+                content: 'Task added successful!'
             });
         })
         .catch(err => {

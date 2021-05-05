@@ -1,0 +1,4 @@
+export {
+    UpdateUserPassButton
+}
+from './component';

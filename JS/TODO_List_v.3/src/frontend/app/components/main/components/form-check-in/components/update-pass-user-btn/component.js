@@ -1,19 +1,19 @@
 import {
-    openUser
+    updateUserPass
 } from './helpers';
 import {
     Button
 } from '../../../../../base';
 import stylesBtn from '../../../../../base/button/styles.module.scss';
 
-export function OpenUserButton() {
-    const openUserBtnText = 'Open';
+export function UpdateUserPassButton() {
+    const addUserBtnText = 'Update User password';
 
     const btn = Button({
         classlist: `${stylesBtn.myButton}`,
-        content: openUserBtnText,
+        content: addUserBtnText,
         type: 'submit',
-        clickHandler: openUser
+        clickHandler: updateUserPass
     });
 
     return btn;

@@ -1,6 +1,9 @@
 import {
     Button
 } from "../../../base";
+import { 
+    labelFormForTask 
+} from "./constants";
 
 import styles from './styles.module.scss';
 
@@ -67,23 +70,23 @@ export function FormAddEditTask({
     
     statusSelect.setAttribute('name', 'status');
     statusOptionToDo.setAttribute('value', 'To do');
-    statusOptionInProgress.setAttribute('value', 'In progress');
-    statusOptionDone.setAttribute('value', 'Done');
+    statusOptionInProgress.setAttribute('value', labelFormForTask.InProgress);
+    statusOptionDone.setAttribute('value', labelFormForTask.Done);
     
     prioritySelect.setAttribute('name', 'priority');
-    priorityOptionSoSo.setAttribute('value', 'So-so');
-    priorityOptionImportant.setAttribute('value', 'Important!');
+    priorityOptionSoSo.setAttribute('value', labelFormForTask.SoSo);
+    priorityOptionImportant.setAttribute('value', labelFormForTask.Important);
     
-    deadlineLabel.textContent = 'Dedline:';
+    deadlineLabel.textContent = labelFormForTask.Dedline;
     
-    statusLabel.textContent = 'Status:';
-    statusOptionToDo.textContent = 'To do';
-    statusOptionInProgress.textContent = 'In progress';
-    statusOptionDone.textContent = 'Done';
+    statusLabel.textContent = labelFormForTask.Status;
+    statusOptionToDo.textContent = labelFormForTask.ToDo;
+    statusOptionInProgress.textContent = labelFormForTask.InProgress;
+    statusOptionDone.textContent = labelFormForTask.Done;
 
-    priorityLabel.textContent = 'Priority:';
-    priorityOptionSoSo.textContent = 'So-so';
-    priorityOptionImportant.textContent = 'Important!';
+    priorityLabel.textContent = labelFormForTask.Priority;
+    priorityOptionSoSo.textContent = labelFormForTask.SoSo;
+    priorityOptionImportant.textContent = labelFormForTask.Important;
 
     deadlineLabel.append(deadlineInput);
 

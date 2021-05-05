@@ -2,7 +2,7 @@ import {
     TasksService
 } from "../../../../../../services/tasks.services";
 import {
-    closeModal
+    closeModal, Icon, IconTypes
 } from "../../../../../base";
 import { 
     startLoadingSpinner, stopLoadingSpinner 
@@ -25,11 +25,16 @@ export function openUser(e) {
 
     const userId = userIdEl.value;
     const pass = passEl.value;
-
+    
     if (localStorage.getItem(userId) && localStorage.getItem(userId) === pass) {
         const divUserId = document.createElement('div');
         const fr = document.createDocumentFragment();
         const tasksService = new TasksService();
+
+        const checkInWrapper = document.createElement('div');
+        const checkInLogo = document.createElement('div');
+
+        checkInWrapper.classList.add(styles.checkInWrapper);        
 
         document.querySelector('modal')?.remove();
     
@@ -37,7 +42,9 @@ export function openUser(e) {
 
         divUserId.setAttribute('id', 'userId');
 
-        document.querySelector('#root').prepend(divUserId);
+        checkInLogo.append(Icon(IconTypes.User, '2x'));
+        checkInWrapper.append(checkInLogo, divUserId);
+        document.querySelector('.todos-switcher').prepend(checkInWrapper);
 
         startLoadingSpinner();
 
@@ -63,5 +70,10 @@ export function openUser(e) {
         });
 
         closeModal(e);
+    } else {
+        $.alert({
+            title: 'Alert!',
+            content: 'Repeat password!'
+        });
     }
 }

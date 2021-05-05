@@ -49,3 +49,10 @@ export function createDateInNewFormat_ms(time) {
 
     return date;
 }
+
+export function createDateInMachFormat(ms) {
+
+    const date = new Date(+ms).toISOString().substr(0, 16);
+
+    return date;
+}
