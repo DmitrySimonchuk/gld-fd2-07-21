@@ -5,3 +5,10 @@
     align-content: center;
     padding: 20%;
 }
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}

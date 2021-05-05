@@ -1,16 +1,16 @@
 import {
     TasksService
 } from "../../../../../../services/tasks.services";
-import {
-    closeModal, Icon, IconTypes
+import {    
+    closeModal,    
 } from "../../../../../base";
-import { 
-    startLoadingSpinner, stopLoadingSpinner 
+import {
+    startLoadingSpinner,
+    stopLoadingSpinner
 } from "../../../../../base/spinner";
 import {
     CreatingTasksList
 } from "../../../creating-tasks-list";
-import styles from './styles.module.scss';
 
 export function openUser(e) {
 
@@ -25,26 +25,15 @@ export function openUser(e) {
 
     const userId = userIdEl.value;
     const pass = passEl.value;
-    
+
     if (localStorage.getItem(userId) && localStorage.getItem(userId) === pass) {
-        const divUserId = document.createElement('div');
+        const divUserId = document.getElementById('userId');
+        divUserId.innerText = userId + '';
+        
         const fr = document.createDocumentFragment();
         const tasksService = new TasksService();
 
-        const checkInWrapper = document.createElement('div');
-        const checkInLogo = document.createElement('div');
-
-        checkInWrapper.classList.add(styles.checkInWrapper);        
-
         document.querySelector('modal')?.remove();
-    
-        divUserId.textContent = userId + '';
-
-        divUserId.setAttribute('id', 'userId');
-
-        checkInLogo.append(Icon(IconTypes.User, '2x'));
-        checkInWrapper.append(checkInLogo, divUserId);
-        document.querySelector('.todos-switcher').prepend(checkInWrapper);
 
         startLoadingSpinner();
 

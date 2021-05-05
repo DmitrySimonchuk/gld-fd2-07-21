@@ -4,10 +4,13 @@ import {
 import {
     Button
 } from '../../../../../base';
+import {
+    textContentBtnCheckInForm
+} from '../constant';
 import stylesBtn from '../../../../../base/button/styles.module.scss';
 
 export function UpdateUserPassButton() {
-    const addUserBtnText = 'Update User password';
+    const addUserBtnText = textContentBtnCheckInForm.SaveUpdatedPassword;
 
     const btn = Button({
         classlist: `${stylesBtn.myButton}`,

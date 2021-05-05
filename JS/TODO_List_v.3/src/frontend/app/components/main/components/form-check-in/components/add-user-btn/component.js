@@ -4,10 +4,13 @@ import {
 import {
     Button
 } from '../../../../../base';
+import {
+    textContentBtnCheckInForm
+} from '../constant';
 import stylesBtn from '../../../../../base/button/styles.module.scss';
 
 export function AddUserButton() {
-    const addUserBtnText = 'Save User';
+    const addUserBtnText = textContentBtnCheckInForm.SaveUser;
 
     const btn = Button({
         classlist: `${stylesBtn.myButton}`,

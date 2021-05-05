@@ -3,6 +3,7 @@ import {
 } from '../../../main/components/creating-tasks-list/components';
 import {
     SearchBar,    
+    SignOutBtn,    
     SortForTimeButton,    
     ThemeSwitcher
 } from './components';
@@ -31,7 +32,7 @@ export function HeaderNav() {
     
     headerNavSort.setAttribute('role', 'group');
 
-    headerNavSwitcher.append(ThemeSwitcher());
+    headerNavSwitcher.append(SignOutBtn(), ThemeSwitcher());
     headerNavSort.append(sortForDay, sortForWeek, sortForMonth, sortForYear, sortForAll);
     headerNavFind.append(SearchBar(), AddTaskButton());
 

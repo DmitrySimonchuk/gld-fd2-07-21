@@ -4,10 +4,13 @@ import {
 import {
     Button
 } from '../../../../../base';
+import {
+    textContentBtnCheckInForm
+} from '../constant';
 import stylesBtn from '../../../../../base/button/styles.module.scss';
 
 export function DelUserButton() {
-    const addUserBtnText = 'Delete User';
+    const addUserBtnText = textContentBtnCheckInForm.DeleteOldUser;
 
     const btn = Button({
         classlist: `${stylesBtn.myButton}`,
@@ -15,6 +18,8 @@ export function DelUserButton() {
         type: 'submit',
         clickHandler: delUser
     });
+
+    btn.classList.add('to-do-btn-danger');
 
     return btn;
 }

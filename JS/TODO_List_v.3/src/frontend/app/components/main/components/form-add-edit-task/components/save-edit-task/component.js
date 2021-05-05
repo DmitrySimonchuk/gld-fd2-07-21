@@ -17,6 +17,9 @@ export function SaveEditingTask(e) {
         status: statusEl,
         priority: priorityEl
     } = form.elements;
+
+    const divUserId = document.getElementById('userId');
+    const userId = divUserId.innerText;
     
     const taskId = form.dataset.id;
     const title = titleEl.value;

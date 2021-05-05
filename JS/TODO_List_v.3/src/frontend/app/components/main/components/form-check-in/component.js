@@ -2,7 +2,8 @@ import {
     OpenUserButton,
     AddUserButton,
     DelUserButton,
-    UpdateUserPassButton
+    UpdateUserPassButton,
+    AddNavBarUserButton
 } from "./components";
 import { 
     labelFormCheckIn 
@@ -27,6 +28,7 @@ export function FormCheckIn({
     const passwordRepeatInput = document.createElement('input');
 
     const btnContainer = document.createElement('div');
+    const btnContainerAditionalBtn = document.createElement('div');
 
     form.classList.add(styles.formTodosCheckIn, 'form-check-in');
 
@@ -38,6 +40,9 @@ export function FormCheckIn({
 
     passwordRepeatLabel.classList.add('mb-3', 'form-label');
     passwordRepeatInput.classList.add('form-control', 'mb-3');
+
+    btnContainer.classList.add(styles.btnContainer);
+    btnContainerAditionalBtn.classList.add(styles.btnContainer);
 
     userInput.setAttribute('required', '');
     userInput.setAttribute('name', 'user');
@@ -69,7 +74,8 @@ export function FormCheckIn({
     );
 
     if (hasOpenUserButton) {
-        btnContainer.append(OpenUserButton());
+        btnContainerAditionalBtn.append(AddNavBarUserButton());
+        btnContainer.append(OpenUserButton(), btnContainerAditionalBtn);
     };
 
     if (hasAddUserButton) {

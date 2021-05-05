@@ -66,7 +66,7 @@ export function CreateTable({
     };
 
     if (colNumberContent) {
-        colNumber.append(Icon(IconTypes.CircleO, '2x'));
+        colNumber.append(Icon(IconTypes.Circle, '1x'));
     };
 
     row.append(colNumber, colDeadline, colTitle, colStatus, colBtn);

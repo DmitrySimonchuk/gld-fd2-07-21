@@ -1,0 +1,13 @@
+.check-in-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+:global {
+
+    #userId {
+        text-align: right;
+        padding: 2% 5% 0 0;
+    }
+}

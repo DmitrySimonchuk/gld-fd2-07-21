@@ -15,3 +15,7 @@ export {
     ThemeSwitcher
 }
 from './theme-switcher';
+export {
+    SignOutBtn
+}
+from './sign-in-btn';

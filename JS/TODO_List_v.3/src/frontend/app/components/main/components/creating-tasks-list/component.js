@@ -27,6 +27,7 @@ export function CreatingTasksList({
     });
         
     row.setAttribute('data-id', id);
+    row.classList.add('task-row-content');
 
     if (status === 'Done') {
         row.classList.add('done');

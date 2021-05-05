@@ -12,6 +12,8 @@ export const IconTypes = {
     Sun: 'sun-o',
     Moon: 'moon-o',
     User: 'user',
+    SignOut: 'sign-out',
+    Circle: 'circle',
     
     Spinner: 'spinner',
     Star: 'star',
